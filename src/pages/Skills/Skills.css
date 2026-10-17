@@ -1,0 +1,151 @@
+/* Skills Page Styles */
+.skills-page {
+  padding-top: calc(var(--header-height) + 3rem);
+  padding-bottom: 8rem;
+  background-color: var(--bg-black);
+}
+
+.skills-hero-title {
+  font-size: clamp(2.6rem, 5.5vw, 4.8rem);
+  line-height: 1.08;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+  margin-top: 1rem;
+}
+
+.skills-categories-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  margin-top: 4rem;
+}
+
+.skills-category-block {
+  background-color: #0f0f0f;
+  border: 1px solid var(--border-subtle);
+  border-radius: 8px;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  position: relative;
+  transition: border-color var(--transition-normal);
+}
+
+.skills-category-block:hover {
+  border-color: rgba(240, 39, 61, 0.4);
+}
+
+.category-block-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  border-bottom: 1px solid var(--border-subtle);
+  padding-bottom: 1.5rem;
+}
+
+.cat-roman-num {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--red-primary);
+  letter-spacing: 0.15em;
+}
+
+.cat-block-title {
+  font-size: 1.85rem;
+  letter-spacing: -0.02em;
+  color: #fff;
+}
+
+.cat-block-desc {
+  font-size: 0.98rem;
+  color: var(--text-secondary);
+}
+
+.skills-cards-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  gap: 1.5rem;
+}
+
+.skill-spec-card {
+  background-color: #151515;
+  border: 1px solid var(--border-subtle);
+  border-radius: 6px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  transition: all var(--transition-fast);
+}
+
+.skill-spec-card:hover {
+  border-color: var(--red-primary);
+  background-color: #191919;
+  transform: translateY(-2px);
+}
+
+.skill-spec-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.skill-spec-name {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.skill-status-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--green-acid);
+  background-color: var(--green-subtle);
+  border: 1px solid rgba(183, 255, 56, 0.25);
+  padding: 0.2rem 0.5rem;
+  border-radius: 3px;
+}
+
+.skill-spec-highlight {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  line-height: 1.55;
+}
+
+.skills-bottom-cta {
+  margin-top: 5rem;
+  background-color: #111111;
+  border: 1px solid var(--border-subtle);
+  border-radius: 8px;
+  padding: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.bottom-cta-heading {
+  font-size: 1.4rem;
+  margin-bottom: 0.4rem;
+}
+
+.bottom-cta-desc {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+}
+
+@media (max-width: 768px) {
+  .skills-category-block {
+    padding: 2rem 1.5rem;
+  }
+  .skills-bottom-cta {
+    padding: 2rem 1.5rem;
+  }
+}

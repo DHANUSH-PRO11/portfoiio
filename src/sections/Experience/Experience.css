@@ -1,0 +1,170 @@
+/* Experience Section Styles */
+.experience-section {
+  padding: 8rem 0;
+  background-color: #0b0b0b;
+  border-top: 1px solid var(--border-subtle);
+  position: relative;
+  z-index: 5;
+}
+
+.experience-header {
+  margin-bottom: 4rem;
+}
+
+.experience-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 4.5rem;
+}
+
+.col-subheading {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  letter-spacing: 0.12em;
+  color: var(--red-primary);
+  margin-bottom: 2rem;
+}
+
+/* Timeline */
+.timeline-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  position: relative;
+  padding-left: 2rem;
+  border-left: 2px solid var(--border-subtle);
+}
+
+.timeline-node {
+  position: relative;
+}
+
+.node-marker {
+  position: absolute;
+  top: 4px;
+  left: calc(-2rem - 6px);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--bg-black);
+  border: 2px solid var(--red-primary);
+  box-shadow: 0 0 10px var(--red-primary);
+}
+
+.node-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.node-timeline {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--red-primary);
+}
+
+.node-degree {
+  font-size: 1.25rem;
+  color: #fff;
+}
+
+.node-institution {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+}
+
+.node-grade-tag {
+  display: inline-block;
+  align-self: flex-start;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--green-acid);
+  background-color: var(--green-subtle);
+  border: 1px solid rgba(183, 255, 56, 0.3);
+  padding: 0.2rem 0.6rem;
+  border-radius: 3px;
+  margin: 0.3rem 0;
+}
+
+.node-details {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* Leadership & Podium Cards */
+.leadership-card, .podium-card {
+  background-color: #121212;
+  border: 1px solid var(--border-subtle);
+  border-radius: 8px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  margin-bottom: 2rem;
+  transition: all var(--transition-normal);
+}
+
+.leadership-card:hover, .podium-card:hover {
+  border-color: var(--red-primary);
+  transform: translateY(-3px);
+}
+
+.leadership-badge, .podium-accent-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  align-self: flex-start;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--green-acid);
+}
+
+.podium-accent-badge {
+  color: var(--red-primary);
+  background: var(--red-glow-subtle);
+  padding: 0.25rem 0.6rem;
+  border-radius: 3px;
+  border: 1px solid rgba(240, 39, 61, 0.3);
+}
+
+.leadership-title, .podium-title {
+  font-size: 1.35rem;
+  color: #fff;
+}
+
+.leadership-sub, .podium-subtitle {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--red-primary);
+}
+
+.leadership-desc, .podium-desc {
+  color: var(--text-secondary);
+  font-size: 0.92rem;
+  line-height: 1.6;
+}
+
+.leadership-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-top: 0.5rem;
+}
+
+.lead-tag {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  background-color: #1a1a1a;
+  border: 1px solid var(--border-subtle);
+  padding: 0.25rem 0.55rem;
+  border-radius: 3px;
+  color: var(--text-secondary);
+}
+
+@media (max-width: 900px) {
+  .experience-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+}

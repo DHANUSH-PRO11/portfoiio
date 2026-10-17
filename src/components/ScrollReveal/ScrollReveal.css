@@ -1,0 +1,4 @@
+/* ScrollReveal Styles */
+.scroll-reveal-box {
+  will-change: transform, opacity;
+}

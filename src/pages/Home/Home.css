@@ -1,0 +1,157 @@
+/* Home Page Styles */
+.home-page {
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Skills Preview Section */
+.home-skills-preview {
+  padding: 8rem 0;
+  background-color: #0c0c0c;
+  border-top: 1px solid var(--border-subtle);
+  position: relative;
+  z-index: 5;
+}
+
+.preview-header-split {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 4rem;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.skills-preview-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.75rem;
+}
+
+.skill-cat-tile {
+  background-color: #121212;
+  border: 1px solid var(--border-subtle);
+  border-radius: 6px;
+  padding: 2.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  height: 100%;
+  transition: all var(--transition-normal);
+  position: relative;
+}
+
+.skill-cat-tile:hover {
+  border-color: var(--red-primary);
+  transform: translateY(-4px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.7);
+}
+
+.cat-num {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--red-primary);
+  font-weight: 700;
+}
+
+.cat-tile-title {
+  font-size: 1.35rem;
+  color: #fff;
+}
+
+.cat-tile-desc {
+  font-size: 0.92rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  flex: 1;
+}
+
+.cat-pills-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-top: 0.5rem;
+}
+
+.cat-pill {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-primary);
+  background-color: #1a1a1a;
+  border: 1px solid var(--border-subtle);
+  padding: 0.25rem 0.6rem;
+  border-radius: 3px;
+}
+
+/* Achievements Preview Section */
+.home-achieve-preview {
+  padding: 8rem 0;
+  background-color: var(--bg-black);
+  border-top: 1px solid var(--border-subtle);
+  position: relative;
+  z-index: 5;
+}
+
+.achieve-preview-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+}
+
+.achieve-tile {
+  background-color: #111111;
+  border: 1px solid var(--border-subtle);
+  border-radius: 6px;
+  padding: 2.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  height: 100%;
+  transition: all var(--transition-normal);
+}
+
+.achieve-tile:hover {
+  border-color: var(--red-primary);
+  transform: translateY(-3px);
+}
+
+.achieve-tile-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.achieve-badge {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--red-primary);
+  letter-spacing: 0.1em;
+}
+
+.achieve-metric-tag {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--green-acid);
+  background-color: var(--green-subtle);
+  border: 1px solid rgba(183, 255, 56, 0.3);
+  padding: 0.2rem 0.5rem;
+  border-radius: 3px;
+}
+
+.achieve-tile-title {
+  font-size: 1.35rem;
+  color: #fff;
+}
+
+.achieve-tile-sub {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--red-primary);
+}
+
+.achieve-tile-desc {
+  font-size: 0.92rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}

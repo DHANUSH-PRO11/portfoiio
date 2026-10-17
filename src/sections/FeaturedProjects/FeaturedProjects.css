@@ -1,0 +1,367 @@
+/* Featured Projects Showcase Styles */
+.featured-showcase-section {
+  position: relative;
+  background-color: var(--bg-black);
+  padding-top: 4rem;
+}
+
+.showcase-header {
+  margin-bottom: 3.5rem;
+}
+
+.showcase-header-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 3.5rem;
+  align-items: flex-end;
+}
+
+/* Scroll Track & Pinned Viewport */
+.showcase-scroll-track {
+  position: relative;
+  width: 100%;
+}
+
+.showcase-pinned-viewport {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.showcase-stage-container {
+  width: 100%;
+  height: calc(100vh - 120px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* The Architectural Mask Frame Card */
+.showcase-mask-card {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--border-subtle);
+  background-color: #0c0c0c;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8);
+}
+
+/* Corner Crosshair Brackets */
+.corner-crosshair {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border-color: var(--red-primary);
+  z-index: 50;
+  pointer-events: none;
+}
+
+.corner-crosshair.top-left {
+  top: 10px;
+  left: 10px;
+  border-top: 2px solid;
+  border-left: 2px solid;
+}
+
+.corner-crosshair.top-right {
+  top: 10px;
+  right: 10px;
+  border-top: 2px solid;
+  border-right: 2px solid;
+}
+
+.corner-crosshair.bottom-left {
+  bottom: 10px;
+  left: 10px;
+  border-bottom: 2px solid;
+  border-left: 2px solid;
+}
+
+.corner-crosshair.bottom-right {
+  bottom: 10px;
+  right: 10px;
+  border-bottom: 2px solid;
+  border-right: 2px solid;
+}
+
+/* Individual Slide Layers */
+.showcase-slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  will-change: clip-path, opacity;
+}
+
+/* Visual Background Layer */
+.slide-visual-layer {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.slide-bg-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transform-origin: center center;
+  will-change: transform;
+}
+
+.slide-overlay-scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(10, 10, 10, 0.94) 0%,
+    rgba(10, 10, 10, 0.85) 45%,
+    rgba(10, 10, 10, 0.4) 100%
+  );
+  z-index: 2;
+}
+
+/* Editorial Content Wrap */
+.slide-content-wrap {
+  position: relative;
+  z-index: 5;
+  padding: 3.5rem 4.5rem;
+  max-width: 780px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.slide-meta-row {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.slide-index-tag {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  color: var(--red-primary);
+  letter-spacing: 0.1em;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.slide-headline {
+  font-size: clamp(2.2rem, 4vw, 3.8rem);
+  font-weight: 800;
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.slide-tagline {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  color: #e5e5e5;
+  font-style: italic;
+}
+
+.slide-description {
+  font-size: 0.98rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+  max-width: 650px;
+}
+
+.slide-tech-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.slide-tech-pill {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--text-primary);
+  background-color: rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--border-subtle);
+  padding: 0.3rem 0.75rem;
+  border-radius: 4px;
+  backdrop-filter: blur(8px);
+}
+
+.slide-telemetry-strip {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding: 0.85rem 1.25rem;
+  background-color: rgba(18, 18, 18, 0.75);
+  border: 1px solid var(--border-subtle);
+  border-radius: 6px;
+  backdrop-filter: blur(10px);
+  flex-wrap: wrap;
+}
+
+.telemetry-block {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.telemetry-key {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.telemetry-val {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.slide-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+/* Bottom-Center Circular Portal Anchor */
+.circular-portal-anchor {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 60;
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  background-color: rgba(10, 10, 10, 0.85);
+  border: 1px solid var(--border-subtle);
+  padding: 0.5rem 1.25rem;
+  border-radius: 999px;
+  backdrop-filter: blur(14px);
+  pointer-events: none;
+}
+
+.portal-ring {
+  position: relative;
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.portal-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--red-primary);
+  box-shadow: 0 0 10px var(--red-primary);
+}
+
+.portal-ping {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 1px solid var(--red-primary);
+  animation: pingPortal 2s infinite ease-out;
+}
+
+@keyframes pingPortal {
+  0% { transform: scale(0.6); opacity: 1; }
+  100% { transform: scale(1.6); opacity: 0; }
+}
+
+.portal-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+}
+
+.portal-label {
+  color: var(--text-muted);
+  letter-spacing: 0.08em;
+}
+
+.portal-counter {
+  color: var(--red-primary);
+  font-weight: 700;
+}
+
+.portal-progress-bar {
+  width: 60px;
+  height: 3px;
+  background-color: var(--border-subtle);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.portal-progress-fill {
+  height: 100%;
+  background-color: var(--red-primary);
+  transition: width 0.1s linear;
+}
+
+/* Slide Indicator Dots */
+.showcase-nav-dots {
+  position: absolute;
+  top: 1.75rem;
+  right: 2rem;
+  z-index: 60;
+  display: flex;
+  gap: 0.6rem;
+}
+
+.showcase-dot {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-subtle);
+  padding: 0.2rem 0.5rem;
+  border-radius: 3px;
+  transition: all var(--transition-fast);
+}
+
+.showcase-dot.active {
+  color: #fff;
+  background-color: var(--red-primary);
+  border-color: var(--red-primary);
+  box-shadow: 0 0 10px var(--red-glow);
+}
+
+@media (max-width: 900px) {
+  .showcase-header-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .slide-content-wrap {
+    padding: 2rem 1.5rem;
+  }
+  .slide-headline {
+    font-size: 1.8rem;
+  }
+  .slide-telemetry-strip {
+    gap: 1rem;
+  }
+  .portal-label {
+    display: none;
+  }
+}

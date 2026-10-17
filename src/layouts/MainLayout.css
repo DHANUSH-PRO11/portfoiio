@@ -1,0 +1,15 @@
+/* MainLayout Styles */
+.site-layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-black);
+  position: relative;
+  overflow-x: hidden;
+}
+
+.site-main {
+  flex: 1;
+  position: relative;
+  z-index: 1;
+}

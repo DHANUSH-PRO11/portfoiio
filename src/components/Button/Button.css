@@ -1,0 +1,102 @@
+/* Button Component Styles */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  border-radius: 4px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: all var(--transition-normal);
+  border: 1px solid transparent;
+  white-space: nowrap;
+}
+
+/* Sizes */
+.btn-sm {
+  padding: 0.5rem 1rem;
+  font-size: 0.78rem;
+}
+
+.btn-md {
+  padding: 0.8rem 1.6rem;
+  font-size: 0.88rem;
+}
+
+.btn-lg {
+  padding: 1rem 2.2rem;
+  font-size: 0.95rem;
+}
+
+/* Primary Variant: Electric Red */
+.btn-primary {
+  background-color: var(--red-primary);
+  color: #fff;
+  border-color: var(--red-primary);
+  box-shadow: 0 4px 20px var(--red-glow);
+}
+
+.btn-primary:hover {
+  background-color: var(--red-hover);
+  border-color: var(--red-hover);
+  box-shadow: 0 6px 25px rgba(240, 39, 61, 0.6);
+  transform: translateY(-2px);
+}
+
+/* Secondary / Dark Surface */
+.btn-secondary {
+  background-color: #1a1a1a;
+  color: var(--text-primary);
+  border-color: var(--border-subtle);
+}
+
+.btn-secondary:hover {
+  background-color: #242424;
+  border-color: var(--border-focus);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+/* Outline Variant */
+.btn-outline {
+  background-color: transparent;
+  color: var(--text-primary);
+  border-color: var(--border-subtle);
+}
+
+.btn-outline:hover {
+  border-color: var(--red-primary);
+  color: var(--red-primary);
+  background-color: var(--red-glow-subtle);
+  transform: translateY(-2px);
+}
+
+/* Acid Green Detail */
+.btn-acid {
+  background-color: var(--green-subtle);
+  color: var(--green-acid);
+  border-color: rgba(183, 255, 56, 0.4);
+}
+
+.btn-acid:hover {
+  background-color: var(--green-acid);
+  color: #000;
+  box-shadow: 0 4px 20px var(--green-glow);
+  transform: translateY(-2px);
+}
+
+.btn-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform var(--transition-fast);
+}
+
+.btn:hover .btn-icon {
+  transform: translateX(3px);
+}
