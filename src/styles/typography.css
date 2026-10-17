@@ -1,0 +1,57 @@
+/* ==========================================================================
+   TYPOGRAPHY SPECIFICATIONS
+   Space Grotesk (Editorial Display) • Plus Jakarta Sans • JetBrains Mono
+   ========================================================================== */
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  color: var(--text-primary);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+}
+
+.display-title {
+  font-size: clamp(3rem, 7vw, 6.5rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+}
+
+.section-title {
+  font-size: clamp(2.2rem, 4.5vw, 4rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.lead-text {
+  font-size: clamp(1.1rem, 1.8vw, 1.35rem);
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.mono-tag {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--red-primary);
+}
+
+.gradient-red-text {
+  background: linear-gradient(135deg, #F2F0EB 0%, #ff7081 40%, #F0273D 90%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.accent-green-text {
+  color: var(--green-acid);
+  font-family: var(--font-mono);
+}
+
+.red-dot {
+  color: var(--red-primary);
+}

@@ -1,0 +1,1417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dhanush G | Computer Science Engineer &amp; Software Developer</title>
+  
+  <!-- SEO & OpenGraph Meta Tags -->
+  <meta name="description" content="Portfolio of Dhanush G — Computer Science Engineering scholar & aspiring software developer specializing in algorithms, full-stack architectures, GBDT regression, dynamic graph routing (A*, Dijkstra), FastAPI, and React. 500+ LeetCode solved.">
+  <meta name="keywords" content="Dhanush G, Computer Science Engineer, Software Developer, Full Stack Developer, Algorithms, Python, FastAPI, React, XGBoost, A* Algorithm, Graph Routing, Portfolio">
+  <meta name="author" content="Dhanush G">
+  
+  <!-- OpenGraph / Social Media -->
+  <meta property="og:title" content="Dhanush G | Computer Science Engineer &amp; Software Developer">
+  <meta property="og:description" content="Computer Science Engineering scholar & software developer architecting intelligent systems, predictive models, and high-performance full-stack platforms. 500+ LeetCode solved.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/dhanush_avatar.jpg">
+
+  <!-- Google Fonts: Space Grotesk (Editorial Display), Plus Jakarta Sans (Body), JetBrains Mono (Telemetry & Code) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Core CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Ambient Radial Glow Orbs -->
+  <div class="ambient-glow ambient-glow-1"></div>
+  <div class="ambient-glow ambient-glow-2"></div>
+  <div class="ambient-glow ambient-glow-3"></div>
+
+  <!-- Interactive Synapse Canvas Background -->
+  <canvas id="neural-canvas"></canvas>
+
+  <!-- Mouse Glow Spotlight -->
+  <div class="cursor-glow" id="cursor-glow"></div>
+
+  <!-- ========================================================================
+       TOP NAVIGATION BAR
+       ======================================================================== -->
+  <header class="navbar" id="navbar">
+    <div class="container nav-container">
+      
+      <!-- Brand Logo / Monogram -->
+      <a href="#hero" class="brand-logo" id="brand-logo">
+        <span class="brand-monogram">DG</span>
+        <span class="brand-text">DHANUSH<span class="red-dot">.</span>DEV</span>
+      </a>
+
+      <!-- Navigation Links -->
+      <nav>
+        <ul class="nav-links" id="nav-links">
+          <li><a href="#about" class="nav-link"><span class="nav-num">01</span> ABOUT</a></li>
+          <li><a href="#skills" class="nav-link"><span class="nav-num">02</span> SKILLS</a></li>
+          <li><a href="#projects" class="nav-link"><span class="nav-num">03</span> PROJECTS</a></li>
+          <li><a href="#playground" class="nav-link"><span class="nav-num">04</span> SIMULATOR</a></li>
+          <li><a href="#achievements" class="nav-link"><span class="nav-num">05</span> ACHIEVEMENTS</a></li>
+          <li><a href="#contact" class="nav-link"><span class="nav-num">06</span> CONTACT</a></li>
+        </ul>
+      </nav>
+
+      <!-- Action Buttons -->
+      <div class="nav-actions">
+        <!-- Audio SFX Toggle -->
+        <button class="sound-toggle-btn" id="sound-toggle" title="Toggle Synthesizer SFX" aria-label="Toggle Sound FX">
+          <svg id="sound-icon-on" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+            <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+          </svg>
+          <svg id="sound-icon-off" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none;">
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+            <line x1="23" y1="9" x2="17" y2="15"></line>
+            <line x1="17" y1="9" x2="23" y2="15"></line>
+          </svg>
+        </button>
+
+        <button class="btn btn-outline-red btn-sm" id="open-resume-btn">
+          <span>RESUME</span>
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17l9.2-9.2M17 17V7H7"/></svg>
+        </button>
+
+        <a href="#contact" class="btn btn-red btn-sm">LET'S TALK ↗</a>
+
+        <!-- Mobile Drawer Toggle -->
+        <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle navigation menu">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ========================================================================
+       HERO SECTION (AWWWARDS-INSPIRED EDITORIAL OPENING)
+       ======================================================================== -->
+  <section class="hero" id="hero">
+    <div class="container hero-container">
+      <div class="hero-grid">
+        
+        <!-- Left Hero Content Column -->
+        <div class="hero-content">
+          
+          <!-- Availability Indicator (Acid Green micro status) -->
+          <div class="hero-status-pill">
+            <span class="status-indicator-dot"></span>
+            <span class="status-indicator-text">AVAILABLE FOR SOFTWARE ENGINEERING ROLES</span>
+          </div>
+
+          <!-- Monumental Bold Name & Title -->
+          <h1 class="hero-title">
+            <span class="title-line title-line-name">DHANUSH G</span>
+            <span class="title-line title-line-accent">SOFTWARE DEVELOPER</span>
+            <span class="title-line title-line-sub">&amp; CS ENGINEER.</span>
+          </h1>
+
+          <!-- Minimal Animated Red Line Accent -->
+          <div class="hero-red-line-wrap">
+            <div class="hero-red-line"></div>
+            <span class="hero-red-line-tag">ALGORITHMS &bull; SYSTEMS &bull; FULL-STACK</span>
+          </div>
+
+          <!-- Dynamic Typing Console Tag -->
+          <div class="hero-typing-wrap">
+            <span class="prompt-symbol">&gt;</span>
+            <span id="typing-text"></span>
+            <span class="cursor-blink"></span>
+          </div>
+
+          <!-- Impactful Description -->
+          <p class="hero-bio">
+            I am a <strong>Computer Science Engineering student</strong> and <strong>aspiring software developer</strong> passionate about building resilient backend architectures, high-performance algorithms, and interactive full-stack web applications.
+          </p>
+
+          <!-- Core Metric Badges Matrix -->
+          <div class="hero-badges-row">
+            <div class="hero-metric-badge">
+              <span class="badge-prefix">⚡ LEETCODE</span>
+              <strong class="badge-value text-red-glow">500+ SOLVED</strong>
+            </div>
+            <div class="hero-metric-badge">
+              <span class="badge-prefix">🎯 CONTEST RATING</span>
+              <strong class="badge-value">1554</strong>
+            </div>
+            <div class="hero-metric-badge">
+              <span class="badge-prefix">📊 TOP MODEL R²</span>
+              <strong class="badge-value text-red-glow">0.957</strong>
+            </div>
+            <div class="hero-metric-badge">
+              <span class="badge-prefix">🏆 HACKATHON</span>
+              <strong class="badge-value">2ND PODIUM</strong>
+            </div>
+          </div>
+
+          <!-- Hero CTA Buttons (Prominent Red CTA + Secondary Links) -->
+          <div class="hero-cta-group">
+            <a href="#projects" class="btn btn-red" id="hero-projects-cta">
+              <span>EXPLORE PROJECTS ↗</span>
+            </a>
+            
+            <a href="https://github.com/DHANUSH-PRO11" target="_blank" rel="noopener noreferrer" class="btn btn-outline-red" id="hero-github-cta">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+              <span>GITHUB</span>
+            </a>
+
+            <button class="btn btn-ghost" id="hero-quick-resume-btn">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+              <span>VIEW CV</span>
+            </button>
+          </div>
+
+          <!-- Philosophy Quote -->
+          <div class="hero-quote-signature">
+            <p class="hero-philosophy-quote">"ALGORITHMS ARE MY CRAFT. IMPACT IS MY MEASURE."</p>
+            <div class="hero-signature-text">DHANUSH G</div>
+          </div>
+
+          <!-- Social Quick Links -->
+          <div class="hero-social-links">
+            <a href="https://github.com/DHANUSH-PRO11" target="_blank" rel="noopener noreferrer" class="social-icon-btn" title="GitHub / DHANUSH-PRO11" aria-label="GitHub">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+            </a>
+            <a href="https://linkedin.com/in/dhanush-g-332a40321" target="_blank" rel="noopener noreferrer" class="social-icon-btn" title="LinkedIn / dhanush-g-332a40321" aria-label="LinkedIn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+            </a>
+            <a href="https://leetcode.com/u/dev_coder_11/" target="_blank" rel="noopener noreferrer" class="social-icon-btn" title="LeetCode / dev_coder_11" aria-label="LeetCode">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path></svg>
+            </a>
+            <a href="mailto:dhanushg1020@gmail.com" class="social-icon-btn" title="Email: dhanushg1020@gmail.com" aria-label="Email">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            </a>
+          </div>
+
+        </div>
+
+        <!-- Right Hero Visual Showcase Card -->
+        <div class="hero-visual-wrapper">
+          <div class="hero-card-frame">
+            <!-- Architectural Red Corner Crosshairs -->
+            <div class="crosshair-bracket top-left"></div>
+            <div class="crosshair-bracket top-right"></div>
+            <div class="crosshair-bracket bottom-left"></div>
+            <div class="crosshair-bracket bottom-right"></div>
+
+            <!-- Floating High-Tech Telemetry Chips -->
+            <div class="telemetry-badge telemetry-badge-top">
+              <div class="telemetry-icon" style="color: var(--red-primary);">⚡</div>
+              <div class="telemetry-info">
+                <span class="telemetry-title">0.957 R² SCORE</span>
+                <span class="telemetry-sub">Continuous GBDT Model</span>
+              </div>
+            </div>
+
+            <div class="telemetry-badge telemetry-badge-bottom">
+              <div class="telemetry-icon" style="color: var(--green-acid);">●</div>
+              <div class="telemetry-info">
+                <span class="telemetry-title">500+ ALGORITHMS</span>
+                <span class="telemetry-sub">LeetCode Contest 1554</span>
+              </div>
+            </div>
+
+            <!-- Portrait Media Container -->
+            <div class="hero-avatar-media">
+              <img src="assets/dhanush_avatar.jpg" alt="Dhanush G - Software Developer &amp; CS Engineer" class="hero-portrait-image">
+              <div class="avatar-vignette-overlay"></div>
+              <div class="avatar-red-accent-light"></div>
+            </div>
+
+            <!-- Card Bottom Bar -->
+            <div class="hero-card-meta-bar">
+              <span class="meta-status"><span class="pulse-green"></span> DHANUSH G // CSE 2024-2028</span>
+              <span class="meta-tag-mini">SRI SHAKTHI INSTITUTE</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       LIVE TELEMETRY NUMERICAL METRICS BAR
+       ======================================================================== -->
+  <section class="metrics-bar-section">
+    <div class="container">
+      <div class="metrics-strip-grid">
+        
+        <div class="metric-block">
+          <div class="metric-val gradient-red" data-target="500">0</div>
+          <div class="metric-lbl">LeetCode Solved</div>
+          <div class="metric-caption">DSA &amp; Optimization</div>
+        </div>
+
+        <div class="metric-block">
+          <div class="metric-val" data-target="1554">0</div>
+          <div class="metric-lbl">Contest Rating</div>
+          <div class="metric-caption">Global Competitive Rank</div>
+        </div>
+
+        <div class="metric-block">
+          <div class="metric-val text-red-glow">0.957</div>
+          <div class="metric-lbl">Predictive R² Score</div>
+          <div class="metric-caption">GBDT Regression Engine</div>
+        </div>
+
+        <div class="metric-block">
+          <div class="metric-val gradient-red">2nd</div>
+          <div class="metric-lbl">Hackathon Runner-Up</div>
+          <div class="metric-caption">State Innovation Podium</div>
+        </div>
+
+        <div class="metric-block">
+          <div class="metric-val text-red-glow">7.9</div>
+          <div class="metric-lbl">B.E. CSE CGPA</div>
+          <div class="metric-caption">Systems &amp; CS Core</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       SECTION 01: ABOUT ME (EDITORIAL SPLIT LAYOUT & INTERACTIVE CONSOLE)
+       ======================================================================== -->
+  <section id="about" class="editorial-section">
+    <div class="container">
+      
+      <!-- Section Header -->
+      <div class="editorial-header">
+        <div class="section-roman-badge">
+          <span>01 / ABOUT ME</span>
+          <div class="badge-line"></div>
+        </div>
+        <h2 class="editorial-title">
+          FROM ALGORITHMIC RIGOR TO<br>
+          <span class="gradient-red">PRODUCTION SYSTEMS.</span>
+        </h2>
+        <p class="editorial-lead">
+          I'm <strong>Dhanush G</strong>, a Computer Science &amp; Engineering scholar specializing in high-performance software engineering, predictive modeling, and sub-second distributed backend services.
+        </p>
+      </div>
+
+      <!-- Split Layout: Profile Telemetry & Interactive Console -->
+      <div class="about-grid">
+        
+        <!-- Left: Academic Credentials & Philosophy -->
+        <div class="about-specs-card">
+          <div class="specs-header">
+            <span class="specs-tag">// PROFILE TELEMETRY</span>
+            <span class="specs-status">ONLINE</span>
+          </div>
+
+          <div class="specs-stats-row">
+            <div class="spec-stat-item">
+              <span class="spec-number text-red-glow">7.9</span>
+              <span class="spec-label">B.E. CSE CGPA</span>
+            </div>
+            <div class="spec-stat-item">
+              <span class="spec-number">85%</span>
+              <span class="spec-label">HSC (Class XII)</span>
+            </div>
+            <div class="spec-stat-item">
+              <span class="spec-number text-red-glow">3+</span>
+              <span class="spec-label">Production Deployments</span>
+            </div>
+            <div class="spec-stat-item">
+              <span class="spec-number">500+</span>
+              <span class="spec-label">DSA Challenges</span>
+            </div>
+          </div>
+
+          <p class="specs-narrative">
+            From implementing multi-horizon crowd regression models with <strong style="color:var(--red-primary);">0.957 R² accuracy</strong> to developing dynamic <strong style="color:var(--text-main);">A* and Dijkstra graph rerouting</strong> algorithms operating under 18ms latencies, my focus is delivering resilient, deterministic, and verifiable systems.
+          </p>
+
+          <div class="specs-actions">
+            <button class="btn btn-red btn-sm" id="about-open-resume-btn">
+              <span>EXPLORE COMPLETE CV</span>
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17l9.2-9.2M17 17V7H7"/></svg>
+            </button>
+            <a href="https://leetcode.com/u/dev_coder_11/" target="_blank" rel="noopener noreferrer" class="btn btn-outline-red btn-sm">
+              <span>LEETCODE PROFILE</span>
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Right: Interactive Cyber Terminal -->
+        <div class="terminal-container" id="terminal-box">
+          <div class="terminal-bar">
+            <div class="terminal-dots">
+              <span class="term-dot red"></span>
+              <span class="term-dot yellow"></span>
+              <span class="term-dot green"></span>
+            </div>
+            <div class="terminal-title">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 17l6-6-6-6M12 19h8"/></svg>
+              <span>dhanush@dev-core:~ (zsh)</span>
+            </div>
+            <button class="term-clear-btn" id="term-clear-btn" title="Clear console">clear</button>
+          </div>
+
+          <div class="terminal-viewport" id="terminal-body">
+            <div class="terminal-line init-line">
+              <span class="term-green">[SYS_INIT_OK]</span> System core v4.4 operational. Type <span class="term-red">help</span> or click command chips.
+            </div>
+            <div class="terminal-line prompt-help">
+              Supported commands: <span class="term-red">about</span>, <span class="term-red">projects</span>, <span class="term-red">skills</span>, <span class="term-red">leetcode</span>, <span class="term-red">benchmark</span>, <span class="term-red">contact</span>.
+            </div>
+            
+            <div class="terminal-prompt-line">
+              <span class="prompt-user">dhanush@dev-core:~$</span>
+              <input type="text" id="terminal-input" class="term-input" placeholder="Type command here..." autocomplete="off" spellcheck="false">
+            </div>
+          </div>
+
+          <!-- Quick Command Chips -->
+          <div class="terminal-chips-row">
+            <button class="chip-btn" data-cmd="about">about</button>
+            <button class="chip-btn" data-cmd="projects">projects</button>
+            <button class="chip-btn" data-cmd="skills">skills</button>
+            <button class="chip-btn" data-cmd="leetcode">leetcode-stats</button>
+            <button class="chip-btn" data-cmd="benchmark">run-benchmark</button>
+            <button class="chip-btn" data-cmd="contact">contact</button>
+            <button class="chip-btn" data-cmd="clear">clear</button>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       SECTION 02: TECHNICAL SKILLS & ARCHITECTURAL CAPABILITY MATRIX
+       (NO fake percentages, NO progress bars, editorial capability layout)
+       ======================================================================== -->
+  <section id="skills" class="editorial-section">
+    <div class="container">
+      
+      <div class="editorial-header">
+        <div class="section-roman-badge">
+          <span>02 / TECHNICAL SKILLS</span>
+          <div class="badge-line"></div>
+        </div>
+        <h2 class="editorial-title">
+          TECHNICAL COMPETENCY.<br>
+          <span class="gradient-red">APPLIED PRECISION.</span>
+        </h2>
+        <p class="editorial-lead">
+          Verified technical skills spanning algorithm design, full-stack microservices, machine learning regression, and containerized deployment pipelines.
+        </p>
+      </div>
+
+      <!-- Skills 4-Column Editorial Capability Grid -->
+      <div class="skills-matrix-grid">
+
+        <!-- Card 1: Core Modeling & AI -->
+        <div class="skill-matrix-card">
+          <div class="skill-card-top">
+            <span class="skill-cat-label">CORE MODELING</span>
+            <span class="skill-badge-category">AI &amp; DS</span>
+          </div>
+          <h3 class="skill-card-title">AI &amp; ALGORITHMS</h3>
+          <p class="skill-card-desc">
+            Continuous regression, dynamic graph heuristics, time-series forecasting, and cross-validation pipelines.
+          </p>
+
+          <div class="skill-capability-list">
+            <div class="capability-item">
+              <div class="cap-meta">
+                <span class="cap-icon">//</span>
+                <span class="cap-name">GBDT &amp; XGBoost Regressors</span>
+              </div>
+              <span class="cap-status"><span class="cap-status-dot"></span> PRODUCTION</span>
+            </div>
+            <div class="capability-item">
+              <div class="cap-meta">
+                <span class="cap-icon">//</span>
+                <span class="cap-name">A* &amp; Dijkstra Graph Solvers</span>
+              </div>
+              <span class="cap-status"><span class="cap-status-dot"></span> OPTIMAL</span>
+            </div>
+            <div class="capability-item">
+              <div class="cap-meta">
+                <span class="cap-icon">//</span>
+                <span class="cap-name">Scikit-learn &amp; NumPy</span>
+              </div>
+              <span class="cap-status"><span class="cap-status-dot"></span> VERIFIED</span>
+            </div>
+            <div class="capability-item">
+              <div class="cap-meta">
+                <span class="cap-icon">//</span>
+                <span class="cap-name">Time-Series Cross Validation</span>
+              </div>
+              <span class="cap-status"><span class="cap-status-dot"></span> ACTIVE</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2: Programming Languages -->
+        <div class="skill-matrix-card">
+          <div class="skill-card-top">
+            <span class="skill-cat-label">LANGUAGES</span>
+            <span class="skill-badge-category">CORE LOGIC</span>
+          </div>
+          <h3 class="skill-card-title">LANGUAGES &amp; DSA</h3>
+          <p class="skill-card-desc">
+            Deep foundation in low-level and high-level programming with an emphasis on data structures and clean code.
+          </p>
+
+          <div class="skill-capability-list">
+            <div class="capability-item">
+              <div class="cap-meta">
+                <span class="cap-icon">//</span>
+                <span class="cap-name">Python (Advanced / Async)</span>
+              </div>
+              <span class="cap-status"><span class="cap-status-dot"></span> PRIMARY</span>
+            </div>
+            <div class="capability-item">
+              <div class="cap-meta">
+                <span class="cap-icon">//</span>
+                <span class="cap-name">C++ / Algorithms</span>
+              </div>
+              <span class="cap-status"><span class="cap-status-dot"></span> CONTEST</span>
+            </div>
+            <div class="capability-item">
+              <div class="cap-meta">
+                <span class="cap-icon">//</span>
+                <span class="cap-name">Java (OOP &amp; Collections)</span>
+              </div>
+              <span class="cap-status"><span class="cap-status-dot"></span> CORE</span>
+            </div>
+            <div class="capability-item">
+              <div class="cap-meta">
+                <span class="cap-icon">//</span>
+                <span class="cap-name">JavaScript (ES6+ / Modern)</span>
+              </div>
+              <span class="cap-status"><span class="cap-status-dot"></span> FLUENT</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3: Full-Stack & Systems -->
+        <div class="skill-matrix-card">
+          <div class="skill-card-top">
+            <span class="skill-cat-label">SYSTEMS</span>
+            <span class="skill-badge-category">FULL STACK</span>
+          </div>
+          <h3 class="skill-card-title">WEB &amp; ARCHITECTURE</h3>
+          <p class="skill-card-desc">
+            Reactive client interfaces, asynchronous high-throughput REST APIs, and geospatial visualization suites.
+          </p>
+
+          <div class="skill-capability-list">
+            <div class="capability-item">
+              <div class="cap-meta">
+                <span class="cap-icon">//</span>
+                <span class="cap-name">React &amp; React 19</span>
+              </div>
+              <span class="cap-status"><span class="cap-status-dot"></span> PRODUCTION</span>
+            </div>
+            <div class="capability-item">
+              <div class="cap-meta">
+                <span class="cap-icon">//</span>
+                <span class="cap-name">FastAPI (Python Asynchronous)</span>
+              </div>
+              <span class="cap-status"><span class="cap-status-dot"></span> HIGH-QPS</span>
+            </div>
+            <div class="capability-item">
+              <div class="cap-meta">
+                <span class="cap-icon">//</span>
+                <span class="cap-name">Node.js &amp; Express</span>
+              </div>
+              <span class="cap-status"><span class="cap-status-dot"></span> SERVICES</span>
+            </div>
+            <div class="capability-item">
+              <div class="cap-meta">
+                <span class="cap-icon">//</span>
+                <span class="cap-name">Modern CSS &amp; Web Standards</span>
+              </div>
+              <span class="cap-status"><span class="cap-status-dot"></span> RESPONSIVE</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 4: Databases & Infrastructure -->
+        <div class="skill-matrix-card">
+          <div class="skill-card-top">
+            <span class="skill-cat-label">INFRASTRUCTURE</span>
+            <span class="skill-badge-category">DEVOPS &amp; DB</span>
+          </div>
+          <h3 class="skill-card-title">DATABASES &amp; MLOPS</h3>
+          <p class="skill-card-desc">
+            Relational and document persistence, containerized CI/CD pipelines, and automated model validation.
+          </p>
+
+          <div class="skill-capability-list">
+            <div class="capability-item">
+              <div class="cap-meta">
+                <span class="cap-icon">//</span>
+                <span class="cap-name">PostgreSQL &amp; Supabase</span>
+              </div>
+              <span class="cap-status"><span class="cap-status-dot"></span> RELATIONAL</span>
+            </div>
+            <div class="capability-item">
+              <div class="cap-meta">
+                <span class="cap-icon">//</span>
+                <span class="cap-name">Docker Containerization</span>
+              </div>
+              <span class="cap-status"><span class="cap-status-dot"></span> CONTAINER</span>
+            </div>
+            <div class="capability-item">
+              <div class="cap-meta">
+                <span class="cap-icon">//</span>
+                <span class="cap-name">MongoDB NoSQL</span>
+              </div>
+              <span class="cap-status"><span class="cap-status-dot"></span> DOCUMENT</span>
+            </div>
+            <div class="capability-item">
+              <div class="cap-meta">
+                <span class="cap-icon">//</span>
+                <span class="cap-name">Git &amp; GitHub Actions</span>
+              </div>
+              <span class="cap-status"><span class="cap-status-dot"></span> CI/CD</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       SECTION 03: SCROLL-DRIVEN CIRCULAR MASK SHOWCASE (AWWWARDS INSPIRED)
+       Signature Experience: Circular mask expanding from bottom-center
+       ======================================================================== -->
+  <section id="projects" class="mask-showcase-section">
+    <div class="container">
+      
+      <div class="editorial-header">
+        <div class="section-roman-badge">
+          <span>03 / SELECTED PROJECTS</span>
+          <div class="badge-line"></div>
+        </div>
+        <div class="header-split-row">
+          <h2 class="editorial-title">
+            ENGINEERED SYSTEMS.<br>
+            <span class="gradient-red">MEASURABLE VALUE.</span>
+          </h2>
+          <p class="header-side-note">
+            Scroll to expand the bottom-center circular portal. Each project unfolds with full-bleed visuals, telemetry metrics, and deep architecture breakdowns.
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Pinned Scroll Track Container (320vh for seamless multi-stage circular expansion) -->
+    <div class="mask-track" id="mask-track">
+      <div class="mask-viewport" id="mask-viewport">
+        <div class="container mask-stage-container">
+          
+          <!-- Outer Architectural Showcase Card -->
+          <div class="mask-card" id="mask-card">
+            <!-- Corner Crosshairs -->
+            <div class="crosshair-bracket top-left"></div>
+            <div class="crosshair-bracket top-right"></div>
+            <div class="crosshair-bracket bottom-left"></div>
+            <div class="crosshair-bracket bottom-right"></div>
+
+            <!-- Slide 0: Project 1 (Base Layer - AI Traffic Prediction) -->
+            <div class="mask-slide mask-slide-0 active" data-index="0" id="slide-0">
+              <div class="slide-visual">
+                <img src="assets/project_traffic_ai.jpg" alt="AI Traffic Prediction &amp; Dynamic Route Optimization" class="slide-bg-img">
+                <div class="slide-overlay-scrim"></div>
+              </div>
+              <div class="slide-content-wrap">
+                <div class="slide-top-meta">
+                  <span class="slide-index-pill">01 // GRAPH ROUTING &amp; AI</span>
+                  <span class="slide-status-pill"><span class="pulse-green"></span> LIVE TELEMETRY</span>
+                </div>
+                <h3 class="slide-hero-title">AI TRAFFIC PREDICTION &amp; DYNAMIC ROUTE OPTIMIZATION</h3>
+                <p class="slide-quote">"Sub-Second Graph Rerouting Meets Predictive GBDT Regression."</p>
+                <p class="slide-summary">
+                  Continuous travel-time regression paired with real-time A* and Dijkstra solvers to forecast arterial delays and automatically reroute around urban chokepoints in under 18ms.
+                </p>
+                <div class="slide-tech-row">
+                  <span class="tech-pill">React 19</span>
+                  <span class="tech-pill">Python</span>
+                  <span class="tech-pill">FastAPI</span>
+                  <span class="tech-pill">GBDT Regressors</span>
+                  <span class="tech-pill">A* Graph Solver</span>
+                  <span class="tech-pill">Docker</span>
+                  <span class="tech-pill">Leaflet</span>
+                </div>
+                <div class="slide-telemetry-strip">
+                  <div class="telemetry-stat"><span class="t-key">SOLVER LATENCY</span><span class="t-val text-red-glow">&lt; 18ms Real-Time</span></div>
+                  <div class="telemetry-stat"><span class="t-key">GRAPH ALGORITHM</span><span class="t-val">A* Solver + Dijkstra</span></div>
+                  <div class="telemetry-stat"><span class="t-key">MODEL ENGINE</span><span class="t-val">Continuous GBDT</span></div>
+                </div>
+                <div class="slide-actions-row">
+                  <a href="https://github.com/DHANUSH-PRO11" target="_blank" rel="noopener noreferrer" class="btn btn-red btn-sm">
+                    <span>VIEW ON GITHUB</span>
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17l9.2-9.2M17 17V7H7"/></svg>
+                  </a>
+                  <button class="btn btn-outline-red btn-sm open-modal-btn" data-modal="traffic-modal">
+                    <span>DEEP ARCHITECTURE SPEC</span>
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 1: Project 2 (Layer 1 with Circular Mask - Railway Crowd Engine) -->
+            <div class="mask-slide mask-slide-1" data-index="1" id="slide-1">
+              <div class="slide-visual">
+                <img src="assets/project_railway_crowd.jpg" alt="Smart Railway Crowd Prediction &amp; Risk Engine" class="slide-bg-img">
+                <div class="slide-overlay-scrim"></div>
+              </div>
+              <div class="slide-content-wrap">
+                <div class="slide-top-meta">
+                  <span class="slide-index-pill">02 // MACHINE LEARNING &amp; MLOPS</span>
+                  <span class="slide-status-pill text-red-glow"><span class="pulse-green"></span> 0.957 R² SCORE</span>
+                </div>
+                <h3 class="slide-hero-title">SMART RAILWAY CROWD PREDICTION &amp; RISK ENGINE</h3>
+                <p class="slide-quote">"Forecasting High-Density Commuter Spikes With 0.957 R² Precision."</p>
+                <p class="slide-summary">
+                  Multi-horizon platform regression system forecasting passenger density across 15, 30, and 60-minute windows with automated champion-challenger MLOps validation and dynamic risk scoring.
+                </p>
+                <div class="slide-tech-row">
+                  <span class="tech-pill">Python</span>
+                  <span class="tech-pill">XGBoost</span>
+                  <span class="tech-pill">Scikit-learn</span>
+                  <span class="tech-pill">FastAPI</span>
+                  <span class="tech-pill">MLOps</span>
+                  <span class="tech-pill">Docker CI/CD</span>
+                </div>
+                <div class="slide-telemetry-strip">
+                  <div class="telemetry-stat"><span class="t-key">ACCURACY</span><span class="t-val text-red-glow">0.957 R² / 29.5 MAE</span></div>
+                  <div class="telemetry-stat"><span class="t-key">HORIZONS</span><span class="t-val">15, 30 &amp; 60 Min</span></div>
+                  <div class="telemetry-stat"><span class="t-key">BASELINE LIFT</span><span class="t-val">+53.4% Outperformance</span></div>
+                </div>
+                <div class="slide-actions-row">
+                  <a href="https://github.com/DHANUSH-PRO11" target="_blank" rel="noopener noreferrer" class="btn btn-red btn-sm">
+                    <span>VIEW ON GITHUB</span>
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17l9.2-9.2M17 17V7H7"/></svg>
+                  </a>
+                  <button class="btn btn-outline-red btn-sm open-modal-btn" data-modal="railway-modal">
+                    <span>MODEL TELEMETRY SPEC</span>
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 2: Project 3 (Layer 2 with Circular Mask - AgroNex Platform) -->
+            <div class="mask-slide mask-slide-2" data-index="2" id="slide-2">
+              <div class="slide-visual">
+                <img src="assets/project_agronex.jpg" alt="AgroNex – Automated Smart Agriculture Platform" class="slide-bg-img">
+                <div class="slide-overlay-scrim"></div>
+              </div>
+              <div class="slide-content-wrap">
+                <div class="slide-top-meta">
+                  <span class="slide-index-pill">03 // AI VISION &amp; AUDIO STREAMING</span>
+                  <span class="slide-status-pill"><span class="pulse-green"></span> BILINGUAL PIPELINE</span>
+                </div>
+                <h3 class="slide-hero-title">AGRONEX – AUTOMATED SMART AGRICULTURE PLATFORM</h3>
+                <p class="slide-quote">"Empowering Farmers With Sub-Second Pathological Telemetry."</p>
+                <p class="slide-summary">
+                  Full-stack agricultural diagnostic engine with computer-vision pathology classification and sub-second streaming audio in Tamil and English with offline-first logging.
+                </p>
+                <div class="slide-tech-row">
+                  <span class="tech-pill">React 19</span>
+                  <span class="tech-pill">Python</span>
+                  <span class="tech-pill">FastAPI</span>
+                  <span class="tech-pill">PostgreSQL</span>
+                  <span class="tech-pill">Supabase</span>
+                  <span class="tech-pill">Tamil &amp; English Voice</span>
+                </div>
+                <div class="slide-telemetry-strip">
+                  <div class="telemetry-stat"><span class="t-key">VISION ENGINE</span><span class="t-val text-red-glow">97%+ Confidence</span></div>
+                  <div class="telemetry-stat"><span class="t-key">AUDIO PIPELINE</span><span class="t-val">Sub-second Stream</span></div>
+                  <div class="telemetry-stat"><span class="t-key">PERSISTENCE</span><span class="t-val">PostgreSQL / Supabase</span></div>
+                </div>
+                <div class="slide-actions-row">
+                  <a href="https://github.com/DHANUSH-PRO11" target="_blank" rel="noopener noreferrer" class="btn btn-red btn-sm">
+                    <span>VIEW ON GITHUB</span>
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17l9.2-9.2M17 17V7H7"/></svg>
+                  </a>
+                  <button class="btn btn-outline-red btn-sm open-modal-btn" data-modal="agronex-modal">
+                    <span>PIPELINE SPECS</span>
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Bottom Center Circular Portal Anchor & Telemetry Controller -->
+            <div class="mask-portal-anchor" id="portal-anchor">
+              <div class="portal-ring">
+                <div class="portal-ping-wave"></div>
+                <div class="portal-center-dot"></div>
+              </div>
+              <div class="portal-meta">
+                <span class="portal-label">SCROLL TO EXPAND CIRCULAR MASK</span>
+                <span class="portal-index-text" id="portal-index-text">PROJECT 01 / 03</span>
+              </div>
+              <div class="portal-progress-bar">
+                <div class="portal-progress-fill" id="portal-progress-fill"></div>
+              </div>
+            </div>
+
+            <!-- Interactive Direct Tab Indicators -->
+            <div class="mask-tabs-indicators" id="mask-tabs">
+              <button class="mask-tab-dot active" data-target-index="0" title="Project 01: Traffic AI">01</button>
+              <button class="mask-tab-dot" data-target-index="1" title="Project 02: Railway Crowd">02</button>
+              <button class="mask-tab-dot" data-target-index="2" title="Project 03: AgroNex">03</button>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       SECTION 04: LIVE IN-BROWSER ML MODEL SIMULATOR
+       ======================================================================== -->
+  <section id="playground" class="editorial-section">
+    <div class="container">
+      
+      <div class="editorial-header">
+        <div class="section-roman-badge">
+          <span>04 / IN-BROWSER SIMULATION</span>
+          <div class="badge-line"></div>
+        </div>
+        <h2 class="editorial-title">
+          INTERACTIVE INFERENCE<br>
+          <span class="gradient-red">&amp; GRAPH SOLVER SIMULATOR.</span>
+        </h2>
+        <p class="editorial-lead">
+          Test real-time predictive models directly in your browser. Adjust incoming passenger loads or inject road gridlock to observe dynamic inference, risk classification, and A* path recalculation.
+        </p>
+      </div>
+
+      <!-- Simulator Interactive Shell -->
+      <div class="simulator-shell">
+        
+        <!-- Tab Bar -->
+        <div class="sim-tab-header">
+          <button class="sim-tab-nav-btn active" data-tab="crowd-sim">
+            <span>01 // RAILWAY CROWD RISK ENGINE</span>
+          </button>
+          <button class="sim-tab-nav-btn" data-tab="traffic-sim">
+            <span>02 // TRAFFIC BOTTLENECK &amp; A* REROUTING</span>
+          </button>
+        </div>
+
+        <!-- Simulator 1: Railway Crowd Risk Engine -->
+        <div class="sim-view-pane" id="sim-crowd-content">
+          <div class="sim-controls-pane">
+            <div class="sim-pane-header">
+              <span class="sim-tag">// FEATURE VECTOR INPUTS</span>
+              <span class="sim-model-id">XGBoost-Regressor-v2.1</span>
+            </div>
+
+            <!-- Slider 1: Base Platform Volume -->
+            <div class="sim-field-group">
+              <div class="sim-field-label-row">
+                <label for="slider-capacity" class="sim-label">Current Platform Volume</label>
+                <span class="sim-val-display" id="val-capacity">1,250 people</span>
+              </div>
+              <input type="range" id="slider-capacity" class="sim-range-slider" min="200" max="3000" step="50" value="1250">
+            </div>
+
+            <!-- Horizon Buttons -->
+            <div class="sim-field-group">
+              <label class="sim-label">Forecasting Horizon Window</label>
+              <div class="sim-button-toggles">
+                <button class="sim-toggle-pill horizon-btn active" data-horizon="15">15-Min Ahead</button>
+                <button class="sim-toggle-pill horizon-btn" data-horizon="30">30-Min Ahead</button>
+                <button class="sim-toggle-pill horizon-btn" data-horizon="60">60-Min Ahead</button>
+              </div>
+            </div>
+
+            <!-- Time Profile -->
+            <div class="sim-field-group">
+              <label class="sim-label">Time-of-Day Traffic Profile</label>
+              <div class="sim-button-toggles">
+                <button class="sim-toggle-pill profile-btn" data-profile="normal">Off-Peak</button>
+                <button class="sim-toggle-pill profile-btn active" data-profile="rush">Rush Hour (Peak)</button>
+                <button class="sim-toggle-pill profile-btn" data-profile="holiday">Surge / Festival</button>
+              </div>
+            </div>
+
+            <!-- Slider 2: Incoming Trains -->
+            <div class="sim-field-group">
+              <div class="sim-field-label-row">
+                <label for="slider-trains" class="sim-label">Scheduled Trains (Next Hour)</label>
+                <span class="sim-val-display" id="val-trains">6 Trains</span>
+              </div>
+              <input type="range" id="slider-trains" class="sim-range-slider" min="1" max="12" step="1" value="6">
+            </div>
+          </div>
+
+          <!-- Simulator 1 Readout Pane -->
+          <div class="sim-readout-pane">
+            <div class="readout-header">
+              <div>
+                <span class="readout-title">// INFERENCE TELEMETRY</span>
+                <div class="readout-sub">Continuous density regressor</div>
+              </div>
+              <span class="status-risk-badge badge-med" id="risk-badge">MODERATE RISK</span>
+            </div>
+
+            <div class="readout-density-box">
+              <div class="readout-big-number gradient-red" id="pred-density">1,480</div>
+              <div class="readout-big-caption">Predicted Platform Crowd Density (Persons)</div>
+            </div>
+
+            <div class="readout-metrics-table">
+              <div class="readout-metric-cell">
+                <span class="cell-k">Model R² Metric</span>
+                <span class="cell-v text-red-glow">0.957 R²</span>
+              </div>
+              <div class="readout-metric-cell">
+                <span class="cell-k">Mean Absolute Error</span>
+                <span class="cell-v">29.5 MAE</span>
+              </div>
+              <div class="readout-metric-cell">
+                <span class="cell-k">Baseline Lift</span>
+                <span class="cell-v text-red-glow">+53.2%</span>
+              </div>
+              <div class="readout-metric-cell">
+                <span class="cell-k">MLOps Status</span>
+                <span class="cell-v text-acid-green">CHAMPION PASS</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Simulator 2: Traffic A* Graph Solver -->
+        <div class="sim-view-pane" id="sim-traffic-content" style="display: none;">
+          <div class="sim-controls-pane">
+            <div class="sim-pane-header">
+              <span class="sim-tag">// URBAN GRAPH INCIDENT INJECTION</span>
+              <span class="sim-model-id">A*-Dijkstra-Solver</span>
+            </div>
+
+            <p style="font-size: 0.92rem; color: #a1a1aa; line-height: 1.6; margin-bottom: 1.5rem;">
+              Simulate sudden road closures or traffic congestion spikes across arterial segments to see real-time A* route optimization in action.
+            </p>
+
+            <div class="sim-field-group">
+              <label class="sim-label">Inject Incident Scenario</label>
+              <div class="sim-button-toggles" style="flex-direction: column;">
+                <button class="sim-toggle-pill traffic-scenario-btn active" data-scenario="clear">Clear Flow (Normal Arterials)</button>
+                <button class="sim-toggle-pill traffic-scenario-btn" data-scenario="bottleneck">Main Expressway Bottleneck (+18 min delay)</button>
+                <button class="sim-toggle-pill traffic-scenario-btn" data-scenario="accident">Accident at Junction 4 (Complete Blockage)</button>
+              </div>
+            </div>
+
+            <button class="btn btn-red btn-block" id="run-reroute-btn" style="margin-top: 1.25rem;">
+              <span>RECALCULATE OPTIMAL ROUTE (A*)</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="23 4 23 10 17 10"></polyline><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path></svg>
+            </button>
+          </div>
+
+          <!-- Simulator 2 Readout Pane -->
+          <div class="sim-readout-pane">
+            <div class="readout-header">
+              <div>
+                <span class="readout-title">// GRAPH SOLVER TELEMETRY</span>
+                <div class="readout-sub">Geospatial cost function solver</div>
+              </div>
+              <span class="status-risk-badge badge-low" id="route-badge">OPTIMAL</span>
+            </div>
+
+            <div class="readout-density-box">
+              <div class="readout-big-number gradient-red" id="route-time">14.2 min</div>
+              <div class="readout-big-caption">Estimated Travel Time (Destination: City Tech Hub)</div>
+            </div>
+
+            <div class="readout-metrics-table">
+              <div class="readout-metric-cell">
+                <span class="cell-k">Active Path</span>
+                <span class="cell-v text-red-glow" id="active-path-text">Node A → B → E → Goal</span>
+              </div>
+              <div class="readout-metric-cell">
+                <span class="cell-k">Reroute Latency</span>
+                <span class="cell-v">18ms</span>
+              </div>
+              <div class="readout-metric-cell">
+                <span class="cell-k">Time Saved</span>
+                <span class="cell-v text-red-glow" id="time-saved-text">Baseline (0 min)</span>
+              </div>
+              <div class="readout-metric-cell">
+                <span class="cell-k">Incidents Avoided</span>
+                <span class="cell-v" id="incidents-avoided-text">0 Chokepoints</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       SECTION 05: ACHIEVEMENTS & ACADEMIC TRACK RECORD
+       ======================================================================== -->
+  <section id="achievements" class="editorial-section">
+    <div class="container">
+      
+      <div class="editorial-header">
+        <div class="section-roman-badge">
+          <span>05 / ACHIEVEMENTS &amp; EDUCATION</span>
+          <div class="badge-line"></div>
+        </div>
+        <h2 class="editorial-title">
+          COMPETITIVE RIGOR &amp;<br>
+          <span class="gradient-red">PROVEN MILESTONES.</span>
+        </h2>
+        <p class="editorial-lead">
+          Verified competitive algorithmic problem-solving, state hackathon podium ranking, technical leadership, and formal computer science education.
+        </p>
+      </div>
+
+      <div class="track-record-grid">
+        
+        <!-- Left Column: Competitive Achievements -->
+        <div class="track-achievements-col">
+          
+          <!-- LeetCode Spotlight Card -->
+          <div class="milestone-card spotlight-red">
+            <div class="milestone-badge-top">⭐ ALGORITHMIC RIGOR</div>
+            <h3 class="milestone-title">500+ LeetCode Solved</h3>
+            <div class="milestone-subtitle">Contest Rating: 1554 &bull; Profile @dev_coder_11</div>
+            <p class="milestone-desc">
+              Demonstrated deep algorithmic rigor across dynamic programming, graph traversals, topological sort, monotonic stacks, binary indexed trees, and greedy optimizations.
+            </p>
+            <div class="milestone-action-row">
+              <a href="https://leetcode.com/u/dev_coder_11/" target="_blank" rel="noopener noreferrer" class="btn btn-outline-red btn-sm">
+                <span>VERIFY ON LEETCODE</span>
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17l9.2-9.2M17 17V7H7"/></svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Hackathon Runner-Up Card -->
+          <div class="milestone-card">
+            <div class="milestone-badge-top text-red-glow">🏆 HACKATHON PODIUM</div>
+            <h3 class="milestone-title">Runner-Up (2nd Place)</h3>
+            <div class="milestone-subtitle">Erode Sengunthar Engineering College Hackathon</div>
+            <p class="milestone-desc">
+              Delivered a complete, deployed software prototype under rigorous 24-hour constraints, winning 2nd prize against inter-college development teams.
+            </p>
+          </div>
+
+          <!-- Leadership Card: Render Rush -->
+          <div class="milestone-card">
+            <div class="milestone-badge-top">🎯 LEADERSHIP &amp; COMMUNITY</div>
+            <h3 class="milestone-title">Lead Organizer — "Render Rush"</h3>
+            <div class="milestone-subtitle">Sri Shakthi Institute of Engineering and Technology</div>
+            <p class="milestone-desc">
+              Headed event management, participant coordination, problem set curation, and live judging logistics for the collegiate tech festival Render Rush.
+            </p>
+          </div>
+
+        </div>
+
+        <!-- Right Column: Formal Academic Timeline -->
+        <div class="track-education-col">
+          <div class="education-card-shell">
+            <div class="edu-shell-top">
+              <span class="edu-tag">// ACADEMIC TIMELINE</span>
+              <span class="edu-status"><span class="pulse-green"></span> ENROLLED</span>
+            </div>
+
+            <div class="timeline-nodes-list">
+              
+              <!-- Degree 1 -->
+              <div class="timeline-node">
+                <div class="timeline-marker"></div>
+                <div class="timeline-node-content">
+                  <div class="node-year">2024 — 2028 (IN PROGRESS)</div>
+                  <h4 class="node-degree">B.E. Computer Science and Engineering</h4>
+                  <div class="node-institution">Sri Shakthi Institute of Engineering and Technology</div>
+                  <div class="node-grade"><strong class="text-red-glow">CGPA: 7.9</strong></div>
+                  <p class="node-details">
+                    Rigorous coursework in Data Structures &amp; Algorithms, Database Management Systems, Machine Learning Foundations, Operating Systems, Computer Networks.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Degree 2 -->
+              <div class="timeline-node">
+                <div class="timeline-marker"></div>
+                <div class="timeline-node-content">
+                  <div class="node-year">GRADUATED 2024</div>
+                  <h4 class="node-degree">Higher Secondary Certificate (Class XII)</h4>
+                  <div class="node-institution">KG Matric School</div>
+                  <div class="node-grade"><strong class="text-red-glow">Score: 85%</strong></div>
+                  <p class="node-details">
+                    Specialization in Mathematics, Physics, Chemistry, and Computer Science.
+                  </p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       SECTION 06: INITIALIZE TRANSMISSION (CONTACT & ENDPOINTS)
+       ======================================================================== -->
+  <section id="contact" class="editorial-section">
+    <div class="container">
+      
+      <div class="editorial-header">
+        <div class="section-roman-badge">
+          <span>06 / CONTACT</span>
+          <div class="badge-line"></div>
+        </div>
+        <h2 class="editorial-title">
+          LET'S ARCHITECT<br>
+          <span class="gradient-red">SOMETHING EXCEPTIONAL.</span>
+        </h2>
+        <p class="editorial-lead">
+          Have an ambitious software engineering opportunity, a systems challenge, or an AI/ML collaboration? Reach out directly below.
+        </p>
+      </div>
+
+      <div class="dispatch-grid">
+        
+        <!-- Left: Network Endpoints Column -->
+        <div class="endpoints-col">
+          <div class="endpoints-header">// DIRECT COMMUNICATION CHANNELS</div>
+
+          <!-- Email Direct Card -->
+          <div class="endpoint-item copy-card" data-copy="dhanushg1020@gmail.com" title="Click to copy email">
+            <div class="endpoint-label">EMAIL</div>
+            <div class="endpoint-line"></div>
+            <div class="endpoint-val">dhanushg1020@gmail.com</div>
+            <span class="endpoint-copy-hint">COPY</span>
+          </div>
+
+          <!-- Phone Direct Card -->
+          <div class="endpoint-item copy-card" data-copy="9487923398" title="Click to copy phone">
+            <div class="endpoint-label">PHONE</div>
+            <div class="endpoint-line"></div>
+            <div class="endpoint-val">+91 9487923398</div>
+            <span class="endpoint-copy-hint">COPY</span>
+          </div>
+
+          <!-- LinkedIn Endpoint -->
+          <a href="https://linkedin.com/in/dhanush-g-332a40321" target="_blank" rel="noopener noreferrer" class="endpoint-item">
+            <div class="endpoint-label">LINKEDIN</div>
+            <div class="endpoint-line"></div>
+            <div class="endpoint-val">/in/dhanush-g-332a40321</div>
+            <span class="endpoint-copy-hint">VISIT ↗</span>
+          </a>
+
+          <!-- GitHub Endpoint -->
+          <a href="https://github.com/DHANUSH-PRO11" target="_blank" rel="noopener noreferrer" class="endpoint-item">
+            <div class="endpoint-label">GITHUB</div>
+            <div class="endpoint-line"></div>
+            <div class="endpoint-val">/DHANUSH-PRO11</div>
+            <span class="endpoint-copy-hint">VISIT ↗</span>
+          </a>
+
+          <!-- LeetCode Endpoint -->
+          <a href="https://leetcode.com/u/dev_coder_11/" target="_blank" rel="noopener noreferrer" class="endpoint-item">
+            <div class="endpoint-label">LEETCODE</div>
+            <div class="endpoint-line"></div>
+            <div class="endpoint-val">/dev_coder_11 (Rating 1554)</div>
+            <span class="endpoint-copy-hint">VISIT ↗</span>
+          </a>
+
+          <!-- System Status Indicator Box -->
+          <div class="system-status-indicator-box">
+            <div class="system-status-line">
+              <span class="status-dot-blink"></span>
+              <span>SYSTEM STATUS: OPERATIONAL</span>
+            </div>
+            <p class="system-status-sub">
+              Direct telemetry active. Available for software engineering internships and full-time junior roles. Response turnaround &lt; 12 hours.
+            </p>
+          </div>
+        </div>
+
+        <!-- Right: Direct Dispatch Cyber Form -->
+        <div class="dispatch-form-pane">
+          <div class="form-cyber-card">
+            <form id="contact-form" class="cyber-form">
+              
+              <div class="form-row-dual">
+                <div class="cyber-field">
+                  <label class="cyber-label" for="contact-name">// SENDER NAME</label>
+                  <input type="text" id="contact-name" class="cyber-input" placeholder="Your name..." required>
+                </div>
+
+                <div class="cyber-field">
+                  <label class="cyber-label" for="contact-email">// EMAIL ADDRESS</label>
+                  <input type="email" id="contact-email" class="cyber-input" placeholder="Your email..." required>
+                </div>
+              </div>
+
+              <div class="cyber-field">
+                <label class="cyber-label" for="contact-subject">// TOPIC / ROLE</label>
+                <input type="text" id="contact-subject" class="cyber-input" placeholder="e.g. Software Engineering Role or Project Collaboration">
+              </div>
+
+              <div class="cyber-field">
+                <label class="cyber-label" for="contact-message">// MESSAGE</label>
+                <textarea id="contact-message" class="cyber-textarea" placeholder="Describe the opportunity or idea..." rows="5" required></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-red btn-block" id="submit-contact-btn">
+                <span>SEND MESSAGE</span>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+              </button>
+
+            </form>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       FOOTER
+       ======================================================================== -->
+  <footer class="footer">
+    <div class="container footer-container">
+      <div class="footer-left">
+        <a href="#hero" class="brand-logo">
+          <span class="brand-monogram">DG</span>
+          <span class="brand-text">DHANUSH<span class="red-dot">.</span>DEV</span>
+        </a>
+        <p class="footer-tagline">Computer Science Engineering scholar &bull; Algorithms &amp; Full-Stack Architectures.</p>
+      </div>
+
+      <div class="footer-center">
+        <p class="footer-copyright">
+          ENGINEERED BY <strong>DHANUSH G</strong> &copy; <span id="current-year"></span>. ALL RIGHTS RESERVED.
+        </p>
+      </div>
+
+      <div class="footer-right">
+        <a href="#hero" class="back-to-top-btn" id="back-to-top">
+          <span>RETURN TO TOP</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="18 15 12 9 6 15"></polyline></svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========================================================================
+       FLOATING 3D RED AI CORE EMBLEM (< / >)
+       ======================================================================== -->
+  <div class="floating-ai-core" id="floating-ai-core" title="Dev Core System Active - Click to Toggle SFX">
+    <div class="ai-core-ring"></div>
+    <div class="ai-core-inner">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--red-primary)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="16 18 22 12 16 6"></polyline>
+        <polyline points="8 6 2 12 8 18"></polyline>
+      </svg>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       MODALS: DEEP ARCHITECTURE & RESUME VIEW
+       ======================================================================== -->
+
+  <!-- Modal 1: Traffic Architecture -->
+  <div class="modal-overlay" id="traffic-modal">
+    <div class="modal-box">
+      <button class="modal-close-btn" aria-label="Close Modal">&times;</button>
+      <div class="modal-pretag">// SYSTEM ARCHITECTURE SPEC</div>
+      <h3 class="modal-heading">AI Traffic Prediction &amp; Dynamic Route Optimization</h3>
+      <p class="modal-lead">
+        Comprehensive breakdown of the GBDT regression pipeline and A* / Dijkstra graph solver.
+      </p>
+
+      <div class="modal-code-box">
+        <span class="modal-code-tag red">[DATA PIPELINE]</span> Sensor telemetry &rarr; 14 Feature Vectors (Hour, Rain, Historical Flow, Incident Flags)<br>
+        <span class="modal-code-tag green">[GBDT MODEL]</span> Travel-time continuous regression per edge weight: Cost = Time(GBDT) + Incident_Penalty<br>
+        <span class="modal-code-tag cyan">[GRAPH SOLVER]</span> A* with Euclidean heuristic h(n) on geospatial coordinates &rarr; &lt; 18ms dynamic pathing<br>
+        <span class="modal-code-tag purple">[TELEMETRY]</span> React 19 + Leaflet tile rendering with dynamic color-coded congestion segments
+      </div>
+
+      <div class="modal-actions">
+        <a href="https://github.com/DHANUSH-PRO11" target="_blank" rel="noopener noreferrer" class="btn btn-red btn-sm">VIEW ON GITHUB ↗</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 2: Railway Crowd Model -->
+  <div class="modal-overlay" id="railway-modal">
+    <div class="modal-box">
+      <button class="modal-close-btn" aria-label="Close Modal">&times;</button>
+      <div class="modal-pretag">// MLOPS &amp; TELEMETRY</div>
+      <h3 class="modal-heading">Smart Railway Crowd Prediction &amp; Risk Engine</h3>
+      <p class="modal-lead">
+        Evaluation metrics, multi-horizon cross-validation, and production MLOps champion-challenger pipeline.
+      </p>
+
+      <div class="modal-code-box">
+        <span class="modal-code-tag green">[ACCURACY]</span> 29.5 MAE (0.957 R²) on test split with chronological cross-validation<br>
+        <span class="modal-code-tag red">[HORIZONS]</span> 15-min, 30-min, and 60-min forward regression windows<br>
+        <span class="modal-code-tag cyan">[BENCHMARK]</span> Outperformed naive persistence heuristics by over 53.4%<br>
+        <span class="modal-code-tag purple">[DEPLOYMENT]</span> Dockerized FastAPI endpoint with automated retraining triggers
+      </div>
+
+      <div class="modal-actions">
+        <a href="https://github.com/DHANUSH-PRO11" target="_blank" rel="noopener noreferrer" class="btn btn-red btn-sm">VIEW ON GITHUB ↗</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 3: AgroNex Pipeline -->
+  <div class="modal-overlay" id="agronex-modal">
+    <div class="modal-box">
+      <button class="modal-close-btn" aria-label="Close Modal">&times;</button>
+      <div class="modal-pretag">// PIPELINE ARCHITECTURE</div>
+      <h3 class="modal-heading">AgroNex – Automated Smart Agriculture Platform</h3>
+      <p class="modal-lead">
+        Multipart asynchronous image classification and bilingual Tamil/English voice streaming architecture.
+      </p>
+
+      <div class="modal-code-box">
+        <span class="modal-code-tag green">[CROP VISION]</span> Real-time leaf pathology diagnostics with 97%+ confidence<br>
+        <span class="modal-code-tag red">[VOICE STREAM]</span> Sub-second bilingual audio streaming in Tamil (தமிழ்) &amp; English<br>
+        <span class="modal-code-tag cyan">[DATABASE]</span> Supabase PostgreSQL for offline logging, farmer records &amp; advisory alerts<br>
+        <span class="modal-code-tag purple">[STACK]</span> React 19 Frontend + Asynchronous FastAPI Backend
+      </div>
+
+      <div class="modal-actions">
+        <a href="https://github.com/DHANUSH-PRO11" target="_blank" rel="noopener noreferrer" class="btn btn-red btn-sm">VIEW ON GITHUB ↗</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 4: Interactive Resume / CV View -->
+  <div class="modal-overlay" id="resume-modal">
+    <div class="modal-box modal-box-wide">
+      <button class="modal-close-btn" aria-label="Close Resume">&times;</button>
+      
+      <div class="resume-modal-topbar">
+        <div>
+          <h2 class="resume-name">DHANUSH G</h2>
+          <p class="resume-title text-red-glow">COMPUTER SCIENCE ENGINEER &bull; SOFTWARE DEVELOPER</p>
+        </div>
+        <button class="btn btn-red btn-sm" onclick="window.print()">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
+          <span>PRINT / SAVE PDF</span>
+        </button>
+      </div>
+
+      <div class="resume-content-body">
+        
+        <!-- Contact Block -->
+        <div class="resume-block">
+          <div class="resume-section-heading">// DIRECT CONTACT &amp; PROFILES</div>
+          <p>
+            Phone: <strong>+91 9487923398</strong> &bull; Email: <strong>dhanushg1020@gmail.com</strong><br>
+            LinkedIn: <a href="https://linkedin.com/in/dhanush-g-332a40321" target="_blank" class="resume-link">linkedin.com/in/dhanush-g-332a40321</a> &bull; 
+            GitHub: <a href="https://github.com/DHANUSH-PRO11" target="_blank" class="resume-link">github.com/DHANUSH-PRO11</a> &bull; 
+            LeetCode: <a href="https://leetcode.com/u/dev_coder_11/" target="_blank" class="resume-link">leetcode.com/u/dev_coder_11/ (Rating 1554)</a>
+          </p>
+        </div>
+
+        <!-- Education Block -->
+        <div class="resume-block">
+          <div class="resume-section-heading">// EDUCATION</div>
+          <p>
+            <strong>Sri Shakthi Institute of Engineering and Technology</strong> (2024–2028)<br>
+            B.E. Computer Science and Engineering &mdash; <strong class="text-red-glow">CGPA: 7.9</strong><br>
+            <strong>KG Matric School</strong> &mdash; Class XII: <strong>85%</strong>
+          </p>
+        </div>
+
+        <!-- Featured Projects Block -->
+        <div class="resume-block">
+          <div class="resume-section-heading">// FEATURED ARCHITECTURES &amp; SYSTEMS</div>
+          
+          <div class="resume-sub-item">
+            <strong>1. AI Traffic Prediction &amp; Dynamic Route Optimization</strong> [React 19, Python, FastAPI, GBDT, A*, Docker, Leaflet]
+            <ul>
+              <li>Continuous travel-time regression with dynamic graph routing to alleviate urban congestion.</li>
+              <li>Engineered GBDT regressor combined with A* and Dijkstra solvers for dynamic rerouting during simulated incidents.</li>
+              <li>Designed interactive geospatial dashboard using React and Leaflet with active road speed color coding.</li>
+            </ul>
+          </div>
+
+          <div class="resume-sub-item">
+            <strong>2. Smart Railway Crowd Prediction &amp; Risk Engine</strong> [Python, XGBoost, Scikit-learn, FastAPI, MLOps, Docker]
+            <ul>
+              <li>Built multi-horizon crowd regression system forecasting passenger density across 15, 30, and 60-min windows.</li>
+              <li>Engineered GBDT models &amp; dynamic risk scoring achieving 29.5 MAE (0.957 R²), beating heuristics by 53%+.</li>
+              <li>Constructed automated MLOps pipeline featuring champion-challenger validation and Docker CI/CD containerization.</li>
+            </ul>
+          </div>
+
+          <div class="resume-sub-item">
+            <strong>3. AgroNex – Automated Smart Agriculture Platform</strong> [React 19, Python, FastAPI, PostgreSQL, Supabase]
+            <ul>
+              <li>Developed full-stack web platform utilizing React 19 and FastAPI for automated crop disease diagnostics.</li>
+              <li>Engineered asynchronous media pipeline supporting multipart image uploads and bilingual voice streaming (Tamil &amp; English).</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Technical Skills Block -->
+        <div class="resume-block">
+          <div class="resume-section-heading">// TECHNICAL EXPERTISE</div>
+          <p>
+            <strong>Languages:</strong> Python, C++, Java, JavaScript (ES6+), SQL<br>
+            <strong>AI &amp; Data Science:</strong> XGBoost, Scikit-learn, GBDT Regressors, Time-Series Forecasting, A* &amp; Dijkstra<br>
+            <strong>Web &amp; Systems:</strong> React 19, FastAPI, Node.js, HTML5, Modern Vanilla CSS, Leaflet Geospatial<br>
+            <strong>Databases &amp; DevOps:</strong> PostgreSQL, Supabase, MongoDB, Docker, Git, CI/CD Pipelines
+          </p>
+        </div>
+
+        <!-- Achievements & Honors -->
+        <div class="resume-block">
+          <div class="resume-section-heading">// ACHIEVEMENTS &amp; LEADERSHIP</div>
+          <p>
+            &bull; Solved <strong>500+ problems</strong> on LeetCode with contest rating of <strong>1554</strong>.<br>
+            &bull; <strong>Runner-Up (2nd Place)</strong> at Erode Sengunthar Engineering College Hackathon.<br>
+            &bull; Lead Organizer for <strong>Render Rush</strong> technical festival at Sri Shakthi Institute of Engineering and Technology.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-container" id="toast-container"></div>
+
+  <!-- Core JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+/* ==========================================================================
+   DESIGN TOKENS & SYSTEM VARIABLES
+   Midnight Black • Electric Red • Acid Green • Warm White
+   ========================================================================== */
+
+:root {
+  /* Core Color Palette */
+  --bg-black: #0A0A0A;
+  --bg-surface: #121212;
+  --bg-surface-elevated: #181818;
+  --bg-card: rgba(18, 18, 18, 0.85);
+  --bg-card-hover: rgba(26, 26, 26, 0.95);
+
+  /* Primary Accent: Electric Red (Mandatory Signature) */
+  --red-primary: #F0273D;
+  --red-hover: #ff3b50;
+  --red-glow: rgba(240, 39, 61, 0.35);
+  --red-glow-subtle: rgba(240, 39, 61, 0.15);
+  --red-dark: #8f0e1d;
+
+  /* Secondary Accent: Acid Green (Restrained contrasting detail) */
+  --green-acid: #B7FF38;
+  --green-glow: rgba(183, 255, 56, 0.3);
+  --green-subtle: rgba(183, 255, 56, 0.12);
+
+  /* Neutrals & Text */
+  --text-primary: #F2F0EB;
+  --text-secondary: #A3A3A3;
+  --text-muted: #666666;
+  --border-subtle: #292929;
+  --border-focus: #F0273D;
+  --border-light: rgba(242, 240, 235, 0.12);
+
+  /* Typography */
+  --font-display: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+
+  /* Layout Spacing */
+  --container-max-width: 1320px;
+  --header-height: 80px;
+
+  /* Transitions */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.35s var(--ease-out-expo);
+  --transition-slow: 0.7s var(--ease-out-expo);
+}

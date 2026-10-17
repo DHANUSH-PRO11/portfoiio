@@ -1,0 +1,105 @@
+/* ==========================================================================
+   UTILITY & STRUCTURAL HELPERS
+   ========================================================================== */
+
+.container {
+  width: 100%;
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 1.25rem;
+  }
+}
+
+.section-padding {
+  padding: 8rem 0;
+}
+
+@media (max-width: 768px) {
+  .section-padding {
+    padding: 5rem 0;
+  }
+}
+
+/* Red Line Accent */
+.animated-red-line {
+  position: relative;
+  width: 70px;
+  height: 2px;
+  background: var(--red-primary);
+  overflow: hidden;
+  border-radius: 1px;
+}
+
+.animated-red-line::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, #fff, transparent);
+  animation: lineSweep 2.5s infinite;
+}
+
+@keyframes lineSweep {
+  0% { left: -100%; }
+  50%, 100% { left: 100%; }
+}
+
+/* Green Status Indicator */
+.status-indicator {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 0.85rem;
+  border-radius: 999px;
+  background: var(--green-subtle);
+  border: 1px solid rgba(183, 255, 56, 0.3);
+  color: var(--green-acid);
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.pulse-dot-green {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--green-acid);
+  box-shadow: 0 0 10px var(--green-acid);
+  animation: pulseGreen 2s infinite;
+}
+
+@keyframes pulseGreen {
+  0% { transform: scale(0.9); opacity: 0.8; }
+  50% { transform: scale(1.2); opacity: 1; box-shadow: 0 0 14px var(--green-acid); }
+  100% { transform: scale(0.9); opacity: 0.8; }
+}
+
+/* Badges and Tags */
+.badge-roman {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--red-primary);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 1.25rem;
+}
+
+.badge-roman::after {
+  content: '';
+  display: inline-block;
+  width: 32px;
+  height: 1px;
+  background: var(--red-primary);
+}
