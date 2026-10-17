@@ -53,7 +53,8 @@
 .about-img-scrim {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, transparent 55%, rgba(18, 18, 18, 0.95) 100%);
+  background: linear-gradient(180deg, transparent 70%, rgba(18, 18, 18, 0.8) 88%, rgba(18, 18, 18, 1) 100%);
+  pointer-events: none;
 }
 
 .about-avatar-meta {
