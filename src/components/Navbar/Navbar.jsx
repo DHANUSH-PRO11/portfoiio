@@ -22,12 +22,12 @@ export function Navbar() {
   }, [location.pathname]);
 
   const navItems = [
-    { name: 'HOME', path: '/', num: '01' },
-    { name: 'ABOUT', path: '/about', num: '02' },
-    { name: 'PROJECTS', path: '/projects', num: '03' },
-    { name: 'SKILLS', path: '/skills', num: '04' },
-    { name: 'ACHIEVEMENTS', path: '/achievements', num: '05' },
-    { name: 'CONTACT', path: '/contact', num: '06' }
+    { name: 'HOME', path: '/' },
+    { name: 'ABOUT', path: '/about' },
+    { name: 'PROJECTS', path: '/projects' },
+    { name: 'SKILLS', path: '/skills' },
+    { name: 'ACHIEVEMENTS', path: '/achievements' },
+    { name: 'CONTACT', path: '/contact' }
   ];
 
   return (
@@ -38,7 +38,7 @@ export function Navbar() {
         <Link to="/" className="brand-logo" aria-label="Dhanush G Portfolio">
           <span className="brand-monogram">DG</span>
           <span className="brand-text">
-            DHANUSH<span className="red-dot">.</span>DEV
+            Dhanush<span className="red-dot">.</span>G
           </span>
         </Link>
 
@@ -52,7 +52,6 @@ export function Navbar() {
                   className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}
                   end={item.path === '/'}
                 >
-                  <span className="nav-item-num">{item.num}</span>
                   <span className="nav-item-name">{item.name}</span>
                 </NavLink>
               </li>
@@ -96,7 +95,6 @@ export function Navbar() {
                 className={({ isActive }) => `mobile-nav-link ${isActive ? 'active' : ''}`}
                 end={item.path === '/'}
               >
-                <span className="mobile-item-num">{item.num}</span>
                 <span className="mobile-item-name">{item.name}</span>
               </NavLink>
             </li>

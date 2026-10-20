@@ -248,11 +248,12 @@
   display: flex;
   align-items: center;
   gap: 1.25rem;
-  background-color: rgba(10, 10, 10, 0.85);
-  border: 1px solid var(--border-subtle);
+  background-color: rgba(10, 10, 10, 0.88);
+  border: 1px solid rgba(240, 39, 61, 0.4);
   padding: 0.5rem 1.25rem;
   border-radius: 999px;
   backdrop-filter: blur(14px);
+  box-shadow: 0 0 25px rgba(240, 39, 61, 0.22);
   pointer-events: none;
 }
 
@@ -270,7 +271,7 @@
   height: 8px;
   border-radius: 50%;
   background-color: var(--red-primary);
-  box-shadow: 0 0 10px var(--red-primary);
+  box-shadow: 0 0 12px var(--red-primary), 0 0 20px var(--red-primary);
 }
 
 .portal-ping {

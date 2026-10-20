@@ -27,10 +27,6 @@ export function Hero() {
           <span className="hero-eyebrow">HELLO, WORLD. I AM</span>
           <h1 className="hero-main-title">
             <span className="title-first">DHANUSH</span>
-            <span className="title-accent-wrap">
-              <span className="title-second">G</span>
-              <span className="red-dot">.</span>
-            </span>
           </h1>
           <div className="hero-red-line-wrap">
             <div className="animated-red-line"></div>

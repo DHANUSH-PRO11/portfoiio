@@ -14,7 +14,7 @@ export function Footer() {
           <div className="footer-brand-col">
             <Link to="/" className="footer-logo">
               <span className="brand-monogram">DG</span>
-              <span className="brand-text">DHANUSH<span className="red-dot">.</span>DEV</span>
+              <span className="brand-text">Dhanush<span className="red-dot">.</span>G</span>
             </Link>
             <p className="footer-tagline">
               Computer Science Engineering scholar &amp; software developer architecting intelligent systems, predictive models, and high-performance web platforms.

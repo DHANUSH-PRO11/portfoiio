@@ -35,9 +35,9 @@ export function initCircularReveal({
     const trigger = ScrollTrigger.create({
       trigger: track,
       start: 'top top',
-      end: () => `+=${window.innerHeight * (slides.length - 1)}`,
+      end: () => `+=${window.innerHeight * (slides.length - 1) * 1.25}`,
       pin: container,
-      scrub: 0.5,
+      scrub: 0.55,
       onUpdate: (self) => {
         const step = 1 / (slides.length - 1);
         const activeIdx = Math.min(
@@ -85,14 +85,14 @@ export function initCircularReveal({
     }
   });
 
-  // Create scrubbed master timeline
+  // Create scrubbed master timeline with calibrated balanced scroll speed
   const tl = gsap.timeline({
     scrollTrigger: {
       trigger: track,
       pin: container,
       start: 'top top',
-      end: () => `+=${window.innerHeight * (projectCount - 1) * 1.6}`,
-      scrub: 0.8,
+      end: () => `+=${window.innerHeight * (projectCount - 1) * 1.25}`,
+      scrub: 0.55,
       anticipatePin: 1,
       invalidateOnRefresh: true,
       onUpdate: (self) => {
@@ -118,54 +118,54 @@ export function initCircularReveal({
 
     const maxRadius = getFullCoverageRadius();
 
-    // 1. Initial peephole entrance
+    // 1. Initial portal peephole
     tl.to(incomingSlide, {
-      clipPath: 'circle(48px at 50% 85%)',
-      ease: 'power2.in',
-      duration: 0.25
+      clipPath: 'circle(54px at 50% 85%)',
+      ease: 'power2.out',
+      duration: 0.18
     });
 
-    // 2. Outgoing content lifts and dissolves
+    // 2. Outgoing content lifts and dissolves smoothly
     if (outgoingContent) {
       tl.to(outgoingContent, {
         opacity: 0,
-        y: -40,
-        filter: 'blur(6px)',
-        duration: 0.35,
-        ease: 'power2.out'
-      }, '<+=0.05');
+        y: -35,
+        filter: 'blur(5px)',
+        duration: 0.28,
+        ease: 'power1.out'
+      }, '<+=0.04');
     }
 
-    // 3. Circle expansion across viewport
+    // 3. Steady, controlled circular expansion across the viewport
     tl.to(incomingSlide, {
       clipPath: `circle(${maxRadius}px at 50% 85%)`,
-      ease: 'power1.inOut',
-      duration: 0.75
-    });
+      ease: 'power1.out',
+      duration: 0.72
+    }, '<+=0.06');
 
-    // 4. Parallax scale on incoming visual
+    // 4. Parallax subtle zoom on incoming visual
     if (incomingImg) {
       tl.fromTo(
         incomingImg,
         { scale: 1.18 },
-        { scale: 1.0, ease: 'power1.out', duration: 0.75 },
+        { scale: 1.0, ease: 'power1.out', duration: 0.72 },
         '<'
       );
     }
 
-    // 5. Incoming content settles into view
+    // 5. Incoming editorial content settles in gracefully
     if (incomingContent) {
       tl.fromTo(
         incomingContent,
-        { opacity: 0, y: 35, filter: 'blur(8px)' },
-        { opacity: 1, y: 0, filter: 'blur(0px)', duration: 0.45, ease: 'power2.out' },
-        '<+=0.3'
+        { opacity: 0, y: 30, filter: 'blur(6px)' },
+        { opacity: 1, y: 0, filter: 'blur(0px)', duration: 0.38, ease: 'power2.out' },
+        '<+=0.25'
       );
     }
 
-    // Small dwell pause on fully revealed slide before next transition
+    // Balanced dwell pause so the user can absorb the project slide
     if (i < projectCount - 1) {
-      tl.to({}, { duration: 0.3 });
+      tl.to({}, { duration: 0.2 });
     }
   }
 

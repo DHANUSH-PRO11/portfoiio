@@ -1,4 +1,7 @@
 /* ScrollReveal Styles */
 .scroll-reveal-box {
   will-change: transform, opacity;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
