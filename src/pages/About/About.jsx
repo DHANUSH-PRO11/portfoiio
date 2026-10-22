@@ -46,7 +46,7 @@ export function About() {
                   </div>
                   <div className="avatar-meta-row">
                     <span className="mono-tag">ROLE</span>
-                    <span className="meta-val text-red-glow">CS ENGINEER &amp; SWE</span>
+                    <span className="meta-val text-red-glow">MACHINE LEARNING ENGINEER</span>
                   </div>
                   <div className="avatar-meta-row">
                     <span className="mono-tag">ALMA MATER</span>

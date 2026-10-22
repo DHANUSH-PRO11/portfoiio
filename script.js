@@ -387,7 +387,6 @@ STATUS: [PASS] Model meets Champion production deployment criteria!`,
 
     contact: `Direct Communication Endpoints:
 • Email    : dhanushg1020@gmail.com
-• Phone    : +91 9487923398
 • LinkedIn : https://linkedin.com/in/dhanush-g-332a40321
 • GitHub   : https://github.com/DHANUSH-PRO11
 • LeetCode : https://leetcode.com/u/dev_coder_11/`
@@ -412,7 +411,7 @@ STATUS: [PASS] Model meets Champion production deployment criteria!`,
       terminalInput.value = '';
       return;
     } else if (cmd === 'sudo hire' || cmd.startsWith('sudo hire') || cmd === 'hire') {
-      outputText = `[ACCESS_GRANTED] Dhanush is available for software engineering internships and junior roles!\nDirect channels: Email 'dhanushg1020@gmail.com' or Phone '+91 9487923398'.`;
+      outputText = `[ACCESS_GRANTED] Dhanush is available for software engineering internships and junior roles!\nDirect channel: Email 'dhanushg1020@gmail.com'.`;
     } else if (cliResponses[cmd]) {
       outputText = cliResponses[cmd];
     } else {

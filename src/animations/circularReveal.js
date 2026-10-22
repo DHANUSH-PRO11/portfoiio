@@ -35,9 +35,9 @@ export function initCircularReveal({
     const trigger = ScrollTrigger.create({
       trigger: track,
       start: 'top top',
-      end: () => `+=${window.innerHeight * (slides.length - 1) * 1.25}`,
+      end: () => `+=${window.innerHeight * (slides.length - 1) * 4.5}`,
       pin: container,
-      scrub: 0.55,
+      scrub: 1.2,
       onUpdate: (self) => {
         const step = 1 / (slides.length - 1);
         const activeIdx = Math.min(
@@ -85,28 +85,36 @@ export function initCircularReveal({
     }
   });
 
-  // Create scrubbed master timeline with calibrated balanced scroll speed
+  // Create scrubbed master timeline with generous runway for slow, deliberate circular expansion
   const tl = gsap.timeline({
     scrollTrigger: {
       trigger: track,
       pin: container,
       start: 'top top',
-      end: () => `+=${window.innerHeight * (projectCount - 1) * 1.25}`,
-      scrub: 0.55,
+      end: () => `+=${window.innerHeight * (projectCount - 1) * 4.5}`,
+      scrub: 1.2,
       anticipatePin: 1,
       invalidateOnRefresh: true,
       onUpdate: (self) => {
-        const step = 1 / (projectCount - 1);
-        const currentIndex = Math.min(
-          projectCount - 1,
-          Math.floor(self.progress / step + 0.15)
-        );
+        const p = self.progress;
+        let currentIndex = 0;
+        if (projectCount === 3) {
+          if (p < 0.38) currentIndex = 0;
+          else if (p < 0.78) currentIndex = 1;
+          else currentIndex = 2;
+        } else {
+          const step = 1 / (projectCount - 1);
+          currentIndex = Math.min(projectCount - 1, Math.floor(p / step + 0.12));
+        }
         if (onSlideChange) {
-          onSlideChange(currentIndex, self.progress);
+          onSlideChange(currentIndex, p);
         }
       }
     }
   });
+
+  // Initial comfortable dwell on Project 1
+  tl.to({}, { duration: 1.2 });
 
   // Build sequential animations for each transition: Slide i -> Slide i+1
   for (let i = 1; i < projectCount; i++) {
@@ -118,55 +126,53 @@ export function initCircularReveal({
 
     const maxRadius = getFullCoverageRadius();
 
-    // 1. Initial portal peephole
+    // 1. Initial portal peephole emerges from the circular anchor
     tl.to(incomingSlide, {
-      clipPath: 'circle(54px at 50% 85%)',
-      ease: 'power2.out',
-      duration: 0.18
+      clipPath: 'circle(64px at 50% 85%)',
+      ease: 'power1.out',
+      duration: 0.4
     });
 
-    // 2. Outgoing content lifts and dissolves smoothly
+    // 2. Outgoing content dissolves smoothly
     if (outgoingContent) {
       tl.to(outgoingContent, {
         opacity: 0,
-        y: -35,
+        y: -30,
         filter: 'blur(5px)',
-        duration: 0.28,
+        duration: 0.45,
         ease: 'power1.out'
-      }, '<+=0.04');
+      }, '<+=0.05');
     }
 
-    // 3. Steady, controlled circular expansion across the viewport
+    // 3. Steady, linear circular expansion across viewport (ease: 'none' for 1:1 scroll responsiveness)
     tl.to(incomingSlide, {
       clipPath: `circle(${maxRadius}px at 50% 85%)`,
-      ease: 'power1.out',
-      duration: 0.72
-    }, '<+=0.06');
+      ease: 'none',
+      duration: 2.8
+    }, '<+=0.1');
 
-    // 4. Parallax subtle zoom on incoming visual
+    // 4. Subtle parallax zoom on the incoming visual
     if (incomingImg) {
       tl.fromTo(
         incomingImg,
-        { scale: 1.18 },
-        { scale: 1.0, ease: 'power1.out', duration: 0.72 },
+        { scale: 1.15 },
+        { scale: 1.0, ease: 'none', duration: 2.8 },
         '<'
       );
     }
 
-    // 5. Incoming editorial content settles in gracefully
+    // 5. Incoming editorial content settles in smoothly as the circle reaches wide coverage
     if (incomingContent) {
       tl.fromTo(
         incomingContent,
-        { opacity: 0, y: 30, filter: 'blur(6px)' },
-        { opacity: 1, y: 0, filter: 'blur(0px)', duration: 0.38, ease: 'power2.out' },
-        '<+=0.25'
+        { opacity: 0, y: 35, filter: 'blur(6px)' },
+        { opacity: 1, y: 0, filter: 'blur(0px)', duration: 0.8, ease: 'power2.out' },
+        '<+=1.4'
       );
     }
 
-    // Balanced dwell pause so the user can absorb the project slide
-    if (i < projectCount - 1) {
-      tl.to({}, { duration: 0.2 });
-    }
+    // 6. Extended stationary dwell pause so the user can comfortably view and read the project
+    tl.to({}, { duration: 1.8 });
   }
 
   // Handle window resize to recalculate clip-path coordinates

@@ -11,7 +11,9 @@ export function Contact() {
     subject: '',
     message: ''
   });
-  const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submittedData, setSubmittedData] = useState(null);
+  const [errorMessage, setErrorMessage] = useState(null);
   const [copiedKey, setCopiedKey] = useState(null);
 
   const handleCopy = (text, key) => {
@@ -22,10 +24,84 @@ export function Contact() {
     }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (!formData.name || !formData.email || !formData.message) return;
-    setSubmitted(true);
+
+    setIsSubmitting(true);
+    setErrorMessage(null);
+
+    const submissionSnapshot = {
+      name: formData.name.trim(),
+      email: formData.email.trim(),
+      subject: formData.subject.trim() || 'Software Engineering / Collab Inquiry',
+      message: formData.message.trim(),
+      timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' }),
+      date: new Date().toLocaleDateString([], { month: 'short', day: 'numeric', year: 'numeric' })
+    };
+
+    try {
+      const web3FormsKey = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY;
+      let response;
+
+      if (web3FormsKey) {
+        response = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
+          body: JSON.stringify({
+            access_key: web3FormsKey,
+            name: submissionSnapshot.name,
+            email: submissionSnapshot.email,
+            subject: `[Portfolio Dispatch] ${submissionSnapshot.subject} from ${submissionSnapshot.name}`,
+            message: submissionSnapshot.message,
+            from_name: submissionSnapshot.name
+          })
+        });
+      } else {
+        response = await fetch(`https://formsubmit.co/ajax/${contactInfo.email}`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
+          body: JSON.stringify({
+            name: submissionSnapshot.name,
+            email: submissionSnapshot.email,
+            _replyto: submissionSnapshot.email,
+            subject: `[Portfolio Dispatch] ${submissionSnapshot.subject} from ${submissionSnapshot.name}`,
+            message: submissionSnapshot.message,
+            _captcha: 'false',
+            _template: 'table'
+          })
+        });
+      }
+
+      const data = await response.json().catch(() => ({}));
+      const isActivation = data && typeof data.message === 'string' && data.message.toLowerCase().includes('activate');
+
+      if (!response.ok && !isActivation) {
+        throw new Error(data.message || `Service returned HTTP ${response.status}`);
+      }
+
+      setSubmittedData({
+        ...submissionSnapshot,
+        activationNeeded: isActivation,
+        delivered: response.ok && !isActivation
+      });
+      setFormData({ name: '', email: '', subject: '', message: '' });
+    } catch (err) {
+      console.warn('Network issue during FormSubmit AJAX, preserving submitted details:', err);
+      setSubmittedData({
+        ...submissionSnapshot,
+        networkFallback: true
+      });
+      setFormData({ name: '', email: '', subject: '', message: '' });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -66,21 +142,6 @@ export function Contact() {
               </span>
             </div>
 
-            {/* Phone Box */}
-            <div
-              className="channel-card"
-              onClick={() => handleCopy(contactInfo.phone, 'phone')}
-              title="Click to copy phone number"
-            >
-              <div className="channel-card-icon">☎</div>
-              <div className="channel-card-body">
-                <span className="channel-card-label">PHONE / WHATSAPP</span>
-                <span className="channel-card-value">+91 {contactInfo.phone}</span>
-              </div>
-              <span className="channel-copy-tag">
-                {copiedKey === 'phone' ? 'COPIED ✓' : 'COPY'}
-              </span>
-            </div>
 
             {/* Social / Portfolio Links */}
             <h3 className="social-links-subheading">DEVELOPER NETWORKS</h3>
@@ -111,17 +172,82 @@ export function Contact() {
               <div className="corner-crosshair bottom-left"></div>
               <div className="corner-crosshair bottom-right"></div>
 
-              {submitted ? (
+              {submittedData ? (
                 <div className="form-success-box">
                   <span className="pulse-dot-green"></span>
                   <h3 className="success-heading">MESSAGE DISPATCHED</h3>
                   <p className="success-message">
-                    Thank you, <strong>{formData.name}</strong>. Your communication has been routed to Dhanush G. Expect a prompt response within 24 hours.
+                    Thank you, <strong>{submittedData.name}</strong>. Your communication details have been captured and dispatched to <strong>{contactInfo.email}</strong>.
                   </p>
+
+                  {/* Transmitted User Details Display Receipt */}
+                  <div className="transmission-receipt">
+                    <div className="receipt-header">
+                      <span>TRANSMISSION RECEIPT</span>
+                      <span style={{ color: submittedData.activationNeeded ? '#f59e0b' : submittedData.networkFallback ? 'var(--text-muted)' : 'var(--green-acid)' }}>
+                        {submittedData.activationNeeded
+                          ? 'ACTIVATION LINK SENT TO GMAIL ⚠️'
+                          : submittedData.networkFallback
+                            ? 'CAPTURED (OFFLINE READY) ✓'
+                            : 'DELIVERED TO INBOX ✓'}
+                      </span>
+                    </div>
+
+                    <div className="receipt-row">
+                      <span className="receipt-label">YOUR NAME</span>
+                      <span className="receipt-value">{submittedData.name}</span>
+                    </div>
+
+                    <div className="receipt-row">
+                      <span className="receipt-label">YOUR EMAIL</span>
+                      <span className="receipt-value">{submittedData.email}</span>
+                    </div>
+
+                    <div className="receipt-row">
+                      <span className="receipt-label">SUBJECT</span>
+                      <span className="receipt-value">{submittedData.subject}</span>
+                    </div>
+
+                    <div className="receipt-row">
+                      <span className="receipt-label">MESSAGE DETAILS</span>
+                      <div className="receipt-message">{submittedData.message}</div>
+                    </div>
+
+                    <div className="receipt-header" style={{ borderTop: '1px solid rgba(255,255,255,0.08)', borderBottom: 'none', paddingTop: '0.5rem', marginTop: '0.2rem' }}>
+                      <span>SENT: {submittedData.date} @ {submittedData.timestamp}</span>
+                      <span>TO: {contactInfo.email}</span>
+                    </div>
+                  </div>
+
+                  {submittedData.activationNeeded && (
+                    <div className="form-error-banner" style={{ textAlign: 'left', width: '100%', maxWidth: '480px', borderColor: 'rgba(245, 158, 11, 0.4)', background: 'rgba(245, 158, 11, 0.08)', color: '#fbbf24' }}>
+                      <strong>⚠️ One-Time Activation Required for {contactInfo.email}:</strong>
+                      <span>FormSubmit has dispatched a confirmation email to your Gmail address. Please check your inbox (and Spam/Updates folder) and click <strong>"Activate Form"</strong>. Once activated, every incoming message will land directly in your email!</span>
+                      <a
+                        href={`mailto:${contactInfo.email}?subject=${encodeURIComponent(submittedData.subject)}&body=${encodeURIComponent(submittedData.message + '\n\nSender: ' + submittedData.name + ' <' + submittedData.email + '>')}`}
+                        className="direct-mail-btn"
+                      >
+                        OPEN PRE-FILLED MAIL CLIENT ↗
+                      </a>
+                    </div>
+                  )}
+
+                  {submittedData.networkFallback && (
+                    <div className="form-error-banner" style={{ textAlign: 'left', width: '100%', maxWidth: '480px' }}>
+                      <span>Notice: Network or ad-blocker restricted automated API delivery. Your transmission is recorded above. You can also trigger your local email client with 1 click:</span>
+                      <a
+                        href={`mailto:${contactInfo.email}?subject=${encodeURIComponent(submittedData.subject)}&body=${encodeURIComponent(submittedData.message + '\n\nSender: ' + submittedData.name + ' <' + submittedData.email + '>')}`}
+                        className="direct-mail-btn"
+                      >
+                        OPEN PRE-FILLED MAIL CLIENT ↗
+                      </a>
+                    </div>
+                  )}
+
                   <Button
                     onClick={() => {
-                      setSubmitted(false);
-                      setFormData({ name: '', email: '', subject: '', message: '' });
+                      setSubmittedData(null);
+                      setErrorMessage(null);
                     }}
                     variant="outline"
                     size="sm"
@@ -202,10 +328,17 @@ export function Contact() {
                     type="submit"
                     variant="primary"
                     size="lg"
-                    style={{ width: '100%', marginTop: '0.5rem' }}
-                    icon={<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>}
+                    disabled={isSubmitting}
+                    style={{ width: '100%', marginTop: '0.5rem', opacity: isSubmitting ? 0.75 : 1 }}
+                    icon={
+                      isSubmitting ? (
+                        <span className="pulse-dot-green" style={{ width: '8px', height: '8px' }}></span>
+                      ) : (
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                      )
+                    }
                   >
-                    SEND MESSAGE
+                    {isSubmitting ? 'TRANSMITTING MESSAGE...' : 'SEND MESSAGE'}
                   </Button>
                 </form>
               )}

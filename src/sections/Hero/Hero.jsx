@@ -13,10 +13,6 @@ export function Hero() {
         
         {/* Top Status Strip */}
         <div className="hero-top-meta">
-          <div className="status-indicator">
-            <span className="pulse-dot-green"></span>
-            <span>AVAILABLE FOR SWE &amp; AI/ML ROLES</span>
-          </div>
           <div className="hero-code-stamp">
             <span className="mono-tag">CSE_SCHOLAR // 2024–2028</span>
           </div>
@@ -30,7 +26,7 @@ export function Hero() {
           </h1>
           <div className="hero-red-line-wrap">
             <div className="animated-red-line"></div>
-            <span className="hero-role-badge">SOFTWARE DEVELOPER &amp; CS ENGINEER</span>
+            <span className="hero-role-badge">MACHINE LEARNING ENGINEER</span>
           </div>
         </div>
 
@@ -83,13 +79,6 @@ export function Hero() {
                   <span className="telemetry-tag">RATING 1554 ↗</span>
                 </a>
 
-                <div className="telemetry-row">
-                  <div className="telemetry-stat">
-                    <span className="stat-number accent-green-text">0.957</span>
-                    <span className="stat-desc">Top Model R² Score (XGBoost)</span>
-                  </div>
-                  <span className="telemetry-tag">MLOPS</span>
-                </div>
 
                 <div className="telemetry-row">
                   <div className="telemetry-stat">

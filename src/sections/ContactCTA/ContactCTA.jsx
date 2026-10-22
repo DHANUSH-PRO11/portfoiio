@@ -49,10 +49,6 @@ export function ContactCTA() {
                 <a href={`mailto:${contactInfo.email}`} className="channel-val">{contactInfo.email}</a>
               </div>
               <div className="channel-item">
-                <span className="channel-label">PHONE</span>
-                <a href={`tel:${contactInfo.phone}`} className="channel-val">+91 {contactInfo.phone}</a>
-              </div>
-              <div className="channel-item">
                 <span className="channel-label">LOCATION</span>
                 <span className="channel-val">{contactInfo.location}</span>
               </div>
